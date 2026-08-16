@@ -42,6 +42,37 @@ disponible en el repo de la release de Raspberry Pi OS en uso — el nombre
 del paquete que contiene el plugin MMAL puede variar entre versiones de
 Debian/Raspberry Pi OS.
 
+## Streams de prueba
+
+Además del stream HLS público por defecto del script (Mux test stream),
+quedan documentados dos streams reales para probar en la Pi:
+
+- **HLS directo**: `http://stream.mcquack.net/242/index.m3u8` — reproducible
+  directo con `cvlc`, sin pasos previos. Es el caso equivalente a un canal
+  IPTV real (una URL `.m3u8`), ideal para validar el flujo completo
+  (video+audio+CPU) tal como se usaría en producción.
+- **YouTube**: `https://www.youtube.com/watch?v=6eCKwa46LJI` — VLC no
+  resuelve de forma confiable URLs de YouTube por sí solo (su extractor
+  interno rompe seguido con cambios del lado de YouTube). Para este caso
+  hay que resolver la URL directa del stream con `yt-dlp` antes de pasarla
+  a `cvlc`. `scripts/test_stream.sh` detecta automáticamente URLs de
+  YouTube (`youtube.com` / `youtu.be`) y hace esa resolución si `yt-dlp`
+  está instalado.
+
+Instalación de `yt-dlp` (Raspberry Pi OS Bookworm bloquea `pip install`
+global por PEP 668, usar `pipx`):
+
+```bash
+sudo apt install -y pipx
+pipx install yt-dlp
+pipx ensurepath
+# reabrir la sesion SSH (o `source ~/.bashrc`) para que yt-dlp quede en el PATH
+```
+
+Nota: para un canal de YouTube en vivo (no un VOD corto), `yt-dlp -g`
+devuelve la URL del manifiesto HLS del live, que `cvlc` puede reproducir
+igual que cualquier otra `.m3u8`.
+
 ## Script de prueba
 
 [`scripts/test_stream.sh`](../../scripts/test_stream.sh) reproduce un
@@ -60,6 +91,10 @@ chmod +x scripts/test_stream.sh
 ./scripts/test_stream.sh
 # o con una URL propia:
 ./scripts/test_stream.sh "https://mi-servidor/mi_lista.m3u8"
+# stream HLS de prueba dejado por el usuario:
+./scripts/test_stream.sh "http://stream.mcquack.net/242/index.m3u8"
+# URL de YouTube: el script la resuelve con yt-dlp automaticamente
+./scripts/test_stream.sh "https://www.youtube.com/watch?v=6eCKwa46LJI"
 # o forzando otro dispositivo ALSA si el indice de tarjeta no es el default:
 HIKARI_ALSA_DEVICE=plughw:1,0 ./scripts/test_stream.sh
 ```

@@ -11,12 +11,25 @@
 
 set -euo pipefail
 
-STREAM_URL="${1:-https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8}"
+INPUT_URL="${1:-https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8}"
 ALSA_DEVICE="${HIKARI_ALSA_DEVICE:-plughw:0,0}"
 
 if ! command -v cvlc >/dev/null 2>&1; then
     echo "Error: cvlc no esta instalado. Ver docs/wiki/03_streaming_prueba.md." >&2
     exit 1
+fi
+
+STREAM_URL="${INPUT_URL}"
+
+# VLC no resuelve YouTube de forma confiable: si la URL es de YouTube,
+# resolver primero el stream directo (HLS o mp4) con yt-dlp.
+if [[ "${INPUT_URL}" == *youtube.com/* || "${INPUT_URL}" == *youtu.be/* ]]; then
+    if ! command -v yt-dlp >/dev/null 2>&1; then
+        echo "Error: URL de YouTube pero yt-dlp no esta instalado. Ver docs/wiki/03_streaming_prueba.md." >&2
+        exit 1
+    fi
+    echo "URL de YouTube detectada, resolviendo stream directo con yt-dlp..."
+    STREAM_URL="$(yt-dlp -f 'best[ext=mp4]/best' -g "${INPUT_URL}")"
 fi
 
 echo "Hikari TV - test_stream.sh"
