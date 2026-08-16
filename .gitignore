@@ -1,0 +1,8 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+*.swp
+
+# Logs locales de pruebas en la Pi
+*.log

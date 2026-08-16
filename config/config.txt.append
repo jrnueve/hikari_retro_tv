@@ -1,0 +1,17 @@
+# Hikari TV - lineas a agregar a /boot/firmware/config.txt (Bookworm)
+# o /boot/config.txt (Bullseye o anterior).
+#
+# No sobrescribir el archivo completo: agregar/mergear estas lineas
+# respetando el resto de la configuracion existente de la Pi.
+# Ver docs/wiki/02_configuracion_sistema.md para el detalle de cada linea.
+
+# --- Hikari TV: salida de video compuesto (TV Out) ---
+enable_tvout=1
+sdtv_mode=0
+sdtv_aspect=1
+
+# --- Hikari TV: memoria de GPU para decodificacion ---
+gpu_mem=128
+
+# --- Hikari TV: audio PWM remapeado a GPIO 18/19 ---
+dtoverlay=audremap,pins_18_19
