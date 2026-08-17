@@ -15,33 +15,17 @@ Compuesto, Audio, VCC y GND. No conectar este cable a un puerto S-Video
 real de otro equipo asumiendo compatibilidad: los niveles y la asignación
 de pines no son S-Video.
 
-Pinout identificado por letra serigrafiada en la placa del modulador
-(fuente de verdad — no varía) y color de cable original del mini-DIN:
+Pinout (la **letra serigrafiada en la placa del modulador** es la
+referencia primaria — no cambia; el color de cable es solo identificación
+visual del tramo actual hacia la Pi, conectado con conectores de pin
+directo al header de 40 pines):
 
-| Pin S-Video | Color original (cable mini-DIN) | Letra en placa | Función |
-|-------------|-----------------|-----------------|-----------------------------------|
-| 1           | Blanco          | B               | VCC — alimentación, **confirmado 5V DC, ~14mA** (ver §6) |
-| 2           | Amarillo        | A               | Entrada de audio analógico mono   |
-| 4           | Rojo            | V               | Entrada de video compuesto        |
-| Chasis/malla| Marrón          | G               | GND / masa común                  |
-
-**Recableado directo al header de la Pi (2026-08-17)**: se reemplazó el
-tramo hacia la Pi por cables nuevos con conectores de pin, para conexión
-directa y removible al header de 40 pines en vez de soldadura fija. Estos
-cables nuevos usan **otra paleta de colores**, mapeada a la misma letra
-serigrafiada (que es la referencia que no cambia):
-
-| Letra en placa | Función | Color cable **nuevo** |
-|-----------------|-----------------------------------|-----------------|
-| A               | Audio (mono, vía filtro RC)       | Amarillo (sin cambios) |
-| B               | VCC (5V, ~14mA)                   | **Naranja** (antes blanco) |
-| V               | Video compuesto                   | **Verde** (antes rojo) |
-| G               | GND / masa común                  | **Azul** (antes marrón) |
-
-A partir de acá, todas las referencias de color en este documento usan la
-paleta **nueva** (naranja/verde/azul/amarillo). Guiarse siempre por la
-letra serigrafiada en la placa del modulador como referencia primaria si
-hay alguna duda.
+| Letra en placa | Función | Color de cable | Pin S-Video (conector mini-DIN) |
+|-----------------|-----------------------------------|-----------------|---|
+| A               | Audio mono (vía filtro RC)        | Amarillo        | 2 |
+| B               | VCC — **confirmado 5V DC, ~14mA** (ver §6) | Naranja | 1 |
+| V               | Video compuesto                   | Verde           | 4 |
+| G               | GND / masa común                  | Azul            | Chasis/malla |
 
 ## 2. Esquema de cableado — Pi Zero W → modulador
 
