@@ -20,7 +20,7 @@ modulador):
 
 | Pin S-Video | Color de cable | Letra en placa | Función                          |
 |-------------|-----------------|-----------------|-----------------------------------|
-| 1           | Blanco          | B               | VCC — alimentación (asumida 5V DC, **verificar antes de conectar**, ver Precauciones) |
+| 1           | Blanco          | B               | VCC — alimentación, **confirmado 5V DC, ~14mA** (ver §6) |
 | 2           | Amarillo        | A               | Entrada de audio analógico mono   |
 | 4           | Rojo            | V               | Entrada de video compuesto        |
 | Chasis/malla| Marrón          | G               | GND / masa común                  |
@@ -139,15 +139,10 @@ en algún momento se prueba con otro modulador/TV que espera NTSC, es la
 
 ## 5. Precauciones eléctricas antes de energizar el conjunto
 
-- **Verificar el voltaje real de VCC antes de conectar el blanco (B) al
-  riel de 5V de la Pi.** El pinout identificado *asume* 5V DC, pero no está
-  confirmado contra un datasheet del modulador. Si el modulador en
-  realidad espera otro voltaje (por ejemplo 9V o 12V, común en algunos
-  moduladores de RF), conectarlo a 5V puede simplemente no encenderlo, o
-  en el peor caso dañarlo si internamente asume una tensión mínima para
-  algún regulador. Medir con multímetro (continuidad y, si es posible,
-  probar el modulador con su fuente original y medir el consumo) antes de
-  unir el blanco al header de la Pi.
+- **VCC ya confirmado en 5V / ~14mA** (ver §6) mediante barrido gradual con
+  fuente de banco de corriente limitada — seguro para conectar al riel de
+  5V de la Pi. Si en el futuro se prueba con otro modulador sin verificar,
+  repetir ese mismo procedimiento antes de conectarlo.
 - **Conectar GND primero**, antes que VCC y las señales de video/audio.
   Esto evita que una diferencia de potencial transitoria entre las dos
   placas (Pi y modulador) circule corriente por las líneas de señal en vez
@@ -175,12 +170,69 @@ en algún momento se prueba con otro modulador/TV que espera NTSC, es la
   puesta a tierra antes de manipular la placa, especialmente en ambientes
   secos.
 
+## 6. Validación en hardware real (2026-08-17)
+
+**Placa identificada**: caja rotulada "SGT RF Unit Model 2088" — por la
+construcción (3 transistores 2SC9018/2SC3198, sin regulador de voltaje a
+bordo, alimentación entregada por el propio cable en vez de fuente propia)
+es consistente con los accesorios de RF de consolas Sega de la época
+(Genesis/Master System), que se alimentaban con 5V tomados del conector
+multi-out de la consola. Sin datasheet propio — pinout confirmado a mano.
+
+**VCC confirmado con fuente de banco (NICE-POWER R-SPS3010)**: barrido
+gradual de 0 a 12V con límite de corriente (CC) en 50mA. A 5V el consumo
+real medido con multímetro en serie, en el rango correcto de mA, fue
+**~14mA** — bajo y sano, muy por debajo de cualquier riesgo de brownout
+compartiendo el riel de 5V de la Pi. No se encontraron indicios de que
+haga falta más de 5V (sin salto de consumo relevante al seguir subiendo
+hasta 12V).
+
+**Errores de medición a tener en cuenta (para no repetirlos)**:
+- Multímetro con la punta en el borne "mA" pero el selector en la posición
+  **"A"** (no "mA") da lecturas completamente erróneas e infladas (~100x
+  más alto que el consumo real) — el selector tiene que coincidir con el
+  borne usado. Si una medición de corriente da un salto imposible (ej.
+  amperios en un circuito de mA), sospechar primero del propio multímetro
+  antes de asumir una falla en la placa.
+- La fuente de banco, pensada para hasta 10A, no tiene resolución real
+  para mostrar corrientes de pocos mA en su propio display aunque el
+  datasheet indique 0.001A — para consumos chicos, medir con multímetro en
+  serie en rango mA/µA, no confiar en el amperímetro de la fuente.
+- Al armar el límite de corriente (CC) en una fuente de solo dos perillas
+  (V e I, sin menú digital), hay que fijarlo **con la salida en
+  cortocircuito** antes de conectar la carga real — girar la perilla de
+  corriente al aire no lo arma.
+
+**Gotcha de cableado — polaridad TV/GND invertida**: al conectar video +
+alimentación, un conversor de video-a-VGA usado como herramienta de
+diagnóstico no mostraba imagen (pantalla "sin señal") pese a que la Pi
+generaba la señal correctamente (confirmado por software: `vcgencmd
+get_lcd_info` seguía en `720 576 24`, sin reinicios, `throttled=0x0`). La
+causa fue que los cables hacia los pads **TV y GND estaban invertidos**
+en la soldadura — al corregir la polaridad, el conversor mostró el prompt
+de Linux inmediatamente. Como el cable hacia el modulador de RF sale del
+mismo par de soldaduras, quedó corregido al mismo tiempo. **Lección**: si
+un dispositivo de video no detecta señal pese a que la Pi está confirmada
+sana por software, revisar polaridad de la soldadura en los pads TV/GND
+antes de sospechar de niveles de señal o del dispositivo receptor.
+
+**Nota sobre RF acoplada a la línea de video**: una vez energizado el
+modulador (VCC conectado), el osciloscopio muestra ruido de alta
+frecuencia superpuesto sobre la línea de video compartida — es la propia
+RF del oscilador del modulador, ya en funcionamiento, colándose en el
+mismo cable sin buffer/aislamiento entre la entrada de video y la etapa
+de RF (diseño simple de 3 transistores). Es esperable con este hardware y
+no indica falla; el criterio de éxito real es la imagen en el TV/RF, no
+que la línea de video se vea "limpia" con el modulador ya oscilando.
+
 ## Referencias pendientes
 
-- [ ] Confirmar el voltaje y consumo real de VCC del modulador con
-      multímetro antes de la primera conexión al riel de 5V de la Pi.
-- [ ] Documentar el modelo/marca específico del modulador si se llega a
-      identificar (actualmente sin datasheet, pinout inferido/medido a mano).
+- [x] Confirmar el voltaje y consumo real de VCC del modulador con
+      multímetro — confirmado: 5V, ~14mA (ver §6).
+- [x] Documentar el modelo/marca específico del modulador — caja
+      rotulada "SGT RF Unit Model 2088", sin datasheet propio, pinout
+      inferido a mano y validado en banco.
 - [ ] Foto del conjunto cableado en `hardware/` una vez armado.
 - [ ] Confirmar sintonía de canal RF de salida (canal VHF 3 o 4) una vez
       conectado al TV.
+- [ ] Prueba funcional completa: video + audio + RF real en el TV CRT.
