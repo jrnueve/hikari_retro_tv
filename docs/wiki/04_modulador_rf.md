@@ -6,38 +6,43 @@ concreto que usa este proyecto: convierte video compuesto + audio mono +
 alimentación 5V en una señal de RF para la entrada de antena de un
 televisor de tubo (CRT).
 
-## 1. El modulador y su conector
+## 1. El modulador y sus conexiones
 
-El modulador trae un cable con conector **Mini-DIN de 4 pines** (misma
-forma física que un conector S-Video), pero **no implementa el estándar
-S-Video** — es un pinout propietario que reutiliza esas 4 vías para Video
-Compuesto, Audio, VCC y GND. No conectar este cable a un puerto S-Video
-real de otro equipo asumiendo compatibilidad: los niveles y la asignación
-de pines no son S-Video.
+El modulador tiene 4 puntos de conexión identificados por letra
+serigrafiada directo en su placa: Video, Audio, VCC y GND. Los cables
+hacia la Pi están conectados directo a esos puntos (con conectores de pin
+al header de 40 pines de la Pi del lado correspondiente).
 
 Pinout (la **letra serigrafiada en la placa del modulador** es la
 referencia primaria — no cambia; el color de cable es solo identificación
-visual del tramo actual hacia la Pi, conectado con conectores de pin
-directo al header de 40 pines):
+visual del tramo actual hacia la Pi):
 
-| Letra en placa | Función | Color de cable | Pin S-Video (conector mini-DIN) |
-|-----------------|-----------------------------------|-----------------|---|
-| A               | Audio mono (vía filtro RC)        | Amarillo        | 2 |
-| B               | VCC — **confirmado 5V DC, ~14mA** (ver §6) | Naranja | 1 |
-| V               | Video compuesto                   | Verde           | 4 |
-| G               | GND / masa común                  | Azul            | Chasis/malla |
+| Letra en placa | Función | Color de cable |
+|-----------------|-----------------------------------|-----------------|
+| A               | Audio mono (vía filtro RC)        | Amarillo        |
+| B               | VCC — **confirmado 5V DC, ~14mA** (ver §6) | Naranja |
+| V               | Video compuesto                   | Verde           |
+| G               | GND / masa común                  | Azul            |
 
 ## 2. Esquema de cableado — Pi Zero W → modulador
 
 La Zero W no tiene conector de video ni audio nativo, así que cada cable
 del modulador se conecta a un punto distinto de la placa:
 
-| Cable modulador | Función | Punto en la Pi Zero W | Notas |
-|---|---|---|---|
-| **Azul (G)** | GND | Test pad **GND** (el mismo par que "TV", cerca del mini-HDMI) — **cuidado con la polaridad**, ver nota en §6 | Conectar **primero**, antes que VCC y señal — ver Precauciones. Todos los GND de la placa son el mismo nodo eléctrico, pero el retorno de video usa específicamente este pad. |
-| **Verde (V)** | Video compuesto | Test pad **TV** (ver [01_hardware_esquemas.md §1](01_hardware_esquemas.md#1-salida-de-video--pin-tv-compuesto)) — **no confundir con el pad GND adyacente**, ver §6 | Señal directa, sin circuito adicional. Único punto de la Pi que puede dar esta señal — no está en el header. |
-| **Amarillo (A)** | Audio mono | Salida del **filtro RC** (después de C2), no directo a GPIO 18 | Ver §3 — nunca conectar el amarillo directo al GPIO. |
-| **Naranja (B)** | VCC (5V, ~14mA confirmado) | Pin físico **2 o 4** del header de 40 pines (rail de 5V), conector de pin directo | Ya validado como seguro — ver §6. |
+| Cable | Función | Color | Serigrafía (lado modulador) | Pin en la Pi |
+|---|---|---|---|---|
+| Video | Video compuesto | Verde | V | Test pad **"TV"** (ver [01_hardware_esquemas.md §1](01_hardware_esquemas.md#1-salida-de-video--pin-tv-compuesto)) — no está en el header, es el único punto de la Pi que da esta señal |
+| Audio | Audio mono, vía filtro RC (nunca directo) | Amarillo | A | **GPIO18 / pin físico 12** del header, a través del filtro R1+C1+C2 (ver §3) |
+| Alimentación | VCC — confirmado 5V DC, ~14mA (ver §6) | Naranja | B | Pin físico **2 o 4** del header (rail de 5V), conector de pin directo |
+| Masa | GND / retorno común | Azul | G | Test pad **"GND"** (junto al pad "TV") |
+
+Notas importantes (no repetidas en la tabla para mantenerla legible):
+
+- **Orden de conexión**: masa (azul) primero, después video/audio, VCC
+  (naranja) al final — ver Precauciones (§5).
+- **Cuidado con la polaridad** entre los pads "TV" y "GND": están uno al
+  lado del otro y son fáciles de invertir en la soldadura — ver el gotcha
+  documentado en §6.
 
 ```
                                 Raspberry Pi Zero W
@@ -64,8 +69,7 @@ del modulador se conecta a un punto distinto de la placa:
                                        │
                        Naranja(VCC) Amarillo(A) Verde(V) Azul(G)
                        ┌────┴───────────┴─────────┴────────┴────┐
-                       │     Modulador de RF (conector          │
-                       │     mini-DIN 4 pines, propietario)      │
+                       │            Modulador de RF              │
                        └──────────────────┬───────────────────────┘
                                           │ RF (coaxial)
                                           ▼

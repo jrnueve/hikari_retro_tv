@@ -91,12 +91,11 @@ GPIO 18 (PWM) o-----/\/\/\-----+------------||------------o  AUDIO OUT
 
 ## 3. Conexión al modulador de RF
 
-El modulador específico usado en este proyecto tiene un pinout propietario
-sobre un conector mini-DIN de 4 pines (no es S-Video real) que combina
-video, audio, VCC y GND en un solo cable. El detalle completo del pinout,
-el esquema de cableado punto a punto, y las precauciones eléctricas antes
-de energizar el conjunto están en
-[04_modulador_rf.md](04_modulador_rf.md).
+El modulador específico usado en este proyecto tiene 4 puntos de conexión
+identificados por letra (Video, Audio, VCC, GND) cableados directo hacia
+la Pi. El detalle completo del pinout, el esquema de cableado punto a
+punto, y las precauciones eléctricas antes de energizar el conjunto están
+en [04_modulador_rf.md](04_modulador_rf.md).
 
 ## Referencias pendientes
 
