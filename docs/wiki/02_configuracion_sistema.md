@@ -62,8 +62,10 @@ dtoverlay=audremap,pins_18_19
 audio_pwm_mode=2
 # Sin el overlay, el PWM de audio sale por los pines de audio "de fabrica"
 # (GPIO 40/41 en el SoC, no expuestos en el header de la Zero W). Con el
-# overlay, sale por GPIO 18 (canal izquierdo) y GPIO 19 (canal derecho),
-# que si estan expuestos en el header de 40 pines de la Zero W.
+# overlay, se habilitan GPIO 18 y GPIO 19 (si estan expuestos en el header
+# de 40 pines de la Zero W). IMPORTANTE (validado en hardware real): en
+# modo audio MONO (speaker-test -c1), la señal sale por GPIO19/pin fisico
+# 35, no por GPIO18/pin 12 pese a la convencion habitual de "izquierdo=18".
 # audio_pwm_mode=2 usa el modo de mayor calidad del PWM de audio.
 
 # --- Hikari TV: DRM VC4 V3D (KMS) deshabilitado a proposito ---
@@ -98,7 +100,7 @@ sudo reboot
 ls -l /dev/fb0                     # debe existir el framebuffer
 fbset -i                           # info de la resolucion/modo activo
 aplay -l                           # deberia listar el dispositivo PWM (bcm2835 headphones)
-speaker-test -D plughw:0,0 -c1 -t sine -f 440   # tono de prueba por GPIO 18 (Ctrl+C para cortar)
+speaker-test -D plughw:0,0 -c1 -t sine -f 440   # tono de prueba mono, sale por GPIO19/pin35 (Ctrl+C para cortar)
 ```
 
 Si `aplay -l` no muestra el dispositivo PWM, confirmar que el overlay

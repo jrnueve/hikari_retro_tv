@@ -31,21 +31,32 @@ video del header GPIO (no hay conector RCA soldado de fábrica en el Zero).
   entrada de video del modulador (blindado/coaxial recomendado para
   minimizar ruido).
 
-## 2. Salida de audio — PWM por GPIO 18 + filtro RC pasivo
+## 2. Salida de audio — PWM por GPIO 19 + filtro RC pasivo
 
 La Pi Zero W no tiene salida de audio analógica dedicada (a diferencia de
 los modelos con jack 3.5mm). El audio se genera como una señal PWM (Pulse
-Width Modulation) de alta frecuencia sobre GPIO 18, que debe filtrarse para
-recuperar la señal de audio analógica antes de entregarla al modulador de RF.
+Width Modulation) de alta frecuencia, que debe filtrarse para recuperar la
+señal de audio analógica antes de entregarla al modulador de RF.
+
+**Importante — validado en hardware real (2026-08-17)**: con
+`dtoverlay=audremap,pins_18_19` + `audio_pwm_mode=2`, el audio **mono**
+(`speaker-test -c1`, que es el modo real que usa este proyecto ya que el
+modulador solo tiene una entrada de audio) sale por **GPIO19 (pin físico
+35)**, no por GPIO18 (pin físico 12) como asume la convención habitual de
+"izquierdo=18/derecho=19". Se confirmó con osciloscopio: en modo mono,
+GPIO18 se queda fijo en un PWM de duty 50% (sin modulación real), mientras
+que GPIO19 sí muestra el duty cycle variando con el tono de prueba. En
+modo estéreo (`-c2`) ambos pines sí llevan señal. **Cablear el filtro a
+GPIO19/pin 35**, no a GPIO18/pin 12.
 
 ### Circuito
 
 ```
                     R1 (~270 Ω)              C2 (~10 µF, electrolitico)
-GPIO 18 (PWM) o-----/\/\/\-----+------------||------------o  AUDIO OUT
-                                |                              (a entrada de
+GPIO 19 (PWM) o-----/\/\/\-----+------------||------------o  AUDIO OUT
+  (pin fisico 35)               |                              (a entrada de
                                 |                               audio del
-                               ===  C1 (~33 nF)                 modulador RF)
+                               ===  C1 (~47 nF)                 modulador RF)
                                 |
                                GND -------------------------o  GND
                                                                 (comun con
@@ -59,10 +70,12 @@ GPIO 18 (PWM) o-----/\/\/\-----+------------||------------o  AUDIO OUT
   PWM de alta frecuencia (tipicamente decenas de kHz) y la convierte en una
   tensión analógica variable equivalente al audio original. Frecuencia de
   corte aproximada: `fc = 1 / (2 * pi * R1 * C1)`.
-- **C1 — Capacitor a GND (~33 nF, cerámico)**: cierra el filtro pasa-bajos
-  contra masa. Junto con R1 (270 Ω / 33 nF) da una `fc` en el orden de los
-  ~18 kHz, suficiente para dejar pasar el rango de audio audible y atenuar
-  la portadora PWM.
+- **C1 — Capacitor a GND (~47 nF, cerámico)**: cierra el filtro pasa-bajos
+  contra masa. Junto con R1 (270 Ω / 47 nF) da una `fc` en el orden de los
+  ~12.5 kHz — se eligió más filtrado que el mínimo (33nF/~18kHz) porque el
+  modulador ya demostró ser sensible a interferencia de RF en líneas
+  cercanas, y la pérdida de agudos por encima de 12.5kHz no se nota en
+  audio de TV. Si se consigue un 33nF más adelante, también sirve.
 - **C2 — Capacitor serie de desacople DC (~10 µF, electrolítico)**: la señal
   filtrada en el nodo entre R1 y C1 tiene un offset de continua (~1.65V,
   la mitad del riel de 3.3V del GPIO). C2 bloquea esa componente DC y deja
@@ -78,9 +91,11 @@ GPIO 18 (PWM) o-----/\/\/\-----+------------||------------o  AUDIO OUT
 
 ### Notas de implementación
 
-- Esto es audio **mono**: PWM por GPIO 18 entrega un solo canal. Si el
-  modulador de RF espera estéreo, alimentar ambos canales (izquierdo y
-  derecho) con la misma señal filtrada, o usar un divisor pasivo simple.
+- Esto es audio **mono**: en esta configuración (`audremap,pins_18_19` +
+  `audio_pwm_mode=2`) el canal mono sale específicamente por GPIO19, no
+  por GPIO18 — ver nota de validación más arriba. Si el modulador de RF
+  esperara estéreo, alimentar ambos canales (GPIO18 y GPIO19) con la señal
+  filtrada correspondiente, o usar un divisor pasivo simple.
 - El filtro es pasivo y de bajo costo (una resistencia + dos capacitores),
   consistente con la restricción de no usar un DAC I2S externo.
 - Calidad esperada: suficiente para voz/TV, no hi-fi. Es una limitación

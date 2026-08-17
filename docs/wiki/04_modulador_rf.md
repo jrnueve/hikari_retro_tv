@@ -16,7 +16,7 @@ al header de 40 pines de la Pi del lado correspondiente).
 | Letra en placa | Función | Color de cable | Pin en la Pi |
 |---|---|---|---|
 | V | Video compuesto | Verde | Test pad **"TV"** (ver [01_hardware_esquemas.md §1](01_hardware_esquemas.md#1-salida-de-video--pin-tv-compuesto)) — no está en el header, es el único punto de la Pi que da esta señal |
-| A | Audio mono, vía filtro RC (nunca directo) | Amarillo | **GPIO18 / pin físico 12** del header, a través del filtro R1+C1+C2 (ver §2) |
+| A | Audio mono, vía filtro RC (nunca directo) | Amarillo | **GPIO19 / pin físico 35** del header, a través del filtro R1+C1+C2 (ver §2 — el mono sale por GPIO19 en esta config, no por GPIO18) |
 | B | VCC — **confirmado 5V DC, ~14mA** (ver §5) | Naranja | Pin físico **2 o 4** del header (rail de 5V), conector de pin directo |
 | G | GND / masa común | Azul | Test pad **"GND"** (junto al pad "TV") |
 
@@ -40,11 +40,11 @@ Notas importantes (no repetidas en la tabla para mantenerla legible):
                        │                                    │
    Pad "GND" o─────────┼──── GND                             │
                        │                                    │
-   GPIO 18    o────┐    │                                    │
-   (header)        │    │                                    │
+   GPIO 19    o────┐    │                                    │
+   (pin fisico 35) │    │                                    │
                     R1 270R                                  │
                     │    │                                    │
-              C1 33nF   │                                    │
+              C1 47nF   │                                    │
               a GND      │                                    │
                     │    │                                    │
                    C2 10uF (serie, desacople DC)               │
@@ -67,10 +67,11 @@ Notas importantes (no repetidas en la tabla para mantenerla legible):
 ## 2. Solución de audio — no conectar el amarillo directo al GPIO
 
 La Pi Zero W no tiene salida de audio analógica: el audio sale como PWM
-(onda cuadrada de alta frecuencia) por GPIO 18. **El cable amarillo del
-modulador debe conectarse a la salida del filtro RC descrito en
-[01_hardware_esquemas.md §2](01_hardware_esquemas.md#2-salida-de-audio--pwm-por-gpio-18--filtro-rc-pasivo)
-(R1 270Ω + C1 33nF a GND + C2 10µF serie), nunca directo al pin.**
+(onda cuadrada de alta frecuencia) por **GPIO19** (ver validación en
+hardware real en [01_hardware_esquemas.md §2](01_hardware_esquemas.md#2-salida-de-audio--pwm-por-gpio-19--filtro-rc-pasivo)
+— el canal mono no sale por GPIO18 pese a ser la convención habitual).
+**El cable amarillo del modulador debe conectarse a la salida del filtro
+RC** (R1 270Ω + C1 47nF a GND + C2 10µF serie), nunca directo al pin.**
 
 ¿Se puede saltear el filtro "solo para una prueba rápida"? **No, ni para
 pruebas**, por dos motivos:
@@ -235,8 +236,49 @@ consola de Linux de forma estable en **canal ~52** (numeración del
 sintonizador del conversor usado para la prueba, no necesariamente el
 canal VHF estándar 3/4 — la numeración exacta puede variar según el
 equipo receptor). Confirma la cadena completa Pi → video/GND → modulador
-alimentado → RF → receptor funcionando de punta a punta para video. Audio
-todavía no conectado (falta soldar/conectar el amarillo vía filtro RC).
+alimentado → RF → receptor funcionando de punta a punta para video.
+
+**Armónicos del oscilador — mismo video en varios canales**: un escaneo
+completo posterior encontró la misma imagen en **canales 23, 57 y 81**.
+Es comportamiento esperado de un oscilador simple sin filtro de salida
+dedicado (este modulador no tiene más que la lata metálica como
+blindaje): la fundamental y sus armónicos (múltiplos de esa frecuencia)
+aparecen todos como "el mismo canal" repetido en distintos puntos del
+dial. No es una falla — para uso real conviene identificar cuál de las
+apariciones tiene mejor calidad de imagen (generalmente la fundamental es
+la más limpia) y usar esa. Definición del canal a usar: pendiente, a
+decidir en una etapa posterior.
+
+**Audio conectado y validado a nivel de circuito (2026-08-17)**: con el
+filtro armado en GPIO19/pin 35 (ver corrección de pin en
+[01_hardware_esquemas.md §2](01_hardware_esquemas.md#2-salida-de-audio--pwm-por-gpio-19--filtro-rc-pasivo))
+y `speaker-test -c1 -f 440` generando un tono de prueba:
+
+- Confirmado con osciloscopio en la salida de C2 (justo antes del cable
+  amarillo hacia el modulador): tono de 440Hz limpio presente.
+- Encontrado en el receptor de prueba en **canales 59 y 83** — separados
+  por **+2 canales** respecto a dos de los tres canales de video (57→59,
+  81→83). Ese espaciado consistente sugiere que el modulador sí está
+  generando video y audio con una relación de frecuencia tipo
+  "intercarrier" razonable (la separación estándar que un TV analógico
+  real usa para sacar el sonido del mismo canal sintonizado
+  automáticamente) — el receptor de prueba usado no logra sostener la
+  sintonía de forma confiable y parece no tener demodulación intercarrier
+  propia, por eso requiere sintonizar video y audio por separado en vez
+  de recibir ambos juntos en un solo canal.
+- Hubo intermitencia al tratar de re-escuchar el tono en pruebas
+  sucesivas (typical del patrón de conexiones flojas de esta sesión), pero
+  la señal en la salida del filtro se re-confirmó estable con el
+  osciloscopio cuando se volvió a chequear.
+
+**Conclusión de esta etapa**: video y audio están validados a nivel de
+circuito (Pi genera ambos correctamente, el filtro de audio funciona, el
+modulador transmite ambos por RF con relación de frecuencia coherente).
+El receptor de prueba (conversor RF-a-VGA) no es confiable para sostener
+una recepción analógica prolongada o simultánea de video+audio — la
+prueba definitiva con ambos juntos en un mismo canal, sintonizados de
+forma estable, queda para cuando se disponga del TV de tubo real (con
+demodulación intercarrier de verdad).
 
 ## Referencias pendientes
 
@@ -247,7 +289,11 @@ todavía no conectado (falta soldar/conectar el amarillo vía filtro RC).
       inferido a mano y validado en banco.
 - [ ] Foto del conjunto cableado en `hardware/` una vez armado.
 - [x] Confirmar sintonía de canal RF de salida — imagen estable encontrada
-      en canal ~52 con un conversor RF-a-VGA como receptor de prueba;
-      falta confirmar el canal real en el TV CRT definitivo (puede diferir).
-- [ ] Conectar audio (amarillo, vía filtro RC) — pendiente.
-- [ ] Prueba funcional completa video + audio + RF real en el TV CRT.
+      en canales 23/57/81 (armónicos) con un conversor RF-a-VGA como
+      receptor de prueba; falta confirmar el/los canales reales en el TV
+      CRT definitivo (puede diferir) y elegir cuál usar en producción.
+- [x] Conectar audio (amarillo, vía filtro RC en GPIO19) — confirmado a
+      nivel de circuito (osciloscopio) y encontrado por RF en canales
+      59/83; sintonía sostenida poco confiable con el receptor de prueba.
+- [ ] Prueba funcional completa video + audio simultáneos, sintonía
+      estable, en el TV CRT real definitivo.
