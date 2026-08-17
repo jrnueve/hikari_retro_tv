@@ -15,15 +15,33 @@ Compuesto, Audio, VCC y GND. No conectar este cable a un puerto S-Video
 real de otro equipo asumiendo compatibilidad: los niveles y la asignación
 de pines no son S-Video.
 
-Pinout identificado (colores del cable / letra serigrafiada en la placa del
-modulador):
+Pinout identificado por letra serigrafiada en la placa del modulador
+(fuente de verdad — no varía) y color de cable original del mini-DIN:
 
-| Pin S-Video | Color de cable | Letra en placa | Función                          |
+| Pin S-Video | Color original (cable mini-DIN) | Letra en placa | Función |
 |-------------|-----------------|-----------------|-----------------------------------|
 | 1           | Blanco          | B               | VCC — alimentación, **confirmado 5V DC, ~14mA** (ver §6) |
 | 2           | Amarillo        | A               | Entrada de audio analógico mono   |
 | 4           | Rojo            | V               | Entrada de video compuesto        |
 | Chasis/malla| Marrón          | G               | GND / masa común                  |
+
+**Recableado directo al header de la Pi (2026-08-17)**: se reemplazó el
+tramo hacia la Pi por cables nuevos con conectores de pin, para conexión
+directa y removible al header de 40 pines en vez de soldadura fija. Estos
+cables nuevos usan **otra paleta de colores**, mapeada a la misma letra
+serigrafiada (que es la referencia que no cambia):
+
+| Letra en placa | Función | Color cable **nuevo** |
+|-----------------|-----------------------------------|-----------------|
+| A               | Audio (mono, vía filtro RC)       | Amarillo (sin cambios) |
+| B               | VCC (5V, ~14mA)                   | **Naranja** (antes blanco) |
+| V               | Video compuesto                   | **Verde** (antes rojo) |
+| G               | GND / masa común                  | **Azul** (antes marrón) |
+
+A partir de acá, todas las referencias de color en este documento usan la
+paleta **nueva** (naranja/verde/azul/amarillo). Guiarse siempre por la
+letra serigrafiada en la placa del modulador como referencia primaria si
+hay alguna duda.
 
 ## 2. Esquema de cableado — Pi Zero W → modulador
 
@@ -32,10 +50,10 @@ del modulador se conecta a un punto distinto de la placa:
 
 | Cable modulador | Función | Punto en la Pi Zero W | Notas |
 |---|---|---|---|
-| **Marrón (G)** | GND | Test pad **GND** (el mismo par que "TV", cerca del mini-HDMI) o cualquier pin GND del header de 40 pines (ej. pin físico 6, 9, 14...) | Conectar **primero**, antes que VCC y señal — ver Precauciones. Todos los GND de la placa son el mismo nodo eléctrico, así que cualquiera sirve; usar el más cómodo de soldar. |
-| **Rojo (V)** | Video compuesto | Test pad **TV** (ver [01_hardware_esquemas.md §1](01_hardware_esquemas.md#1-salida-de-video--pin-tv-compuesto)) | Señal directa, sin circuito adicional. |
+| **Azul (G)** | GND | Test pad **GND** (el mismo par que "TV", cerca del mini-HDMI) — **cuidado con la polaridad**, ver nota en §6 | Conectar **primero**, antes que VCC y señal — ver Precauciones. Todos los GND de la placa son el mismo nodo eléctrico, pero el retorno de video usa específicamente este pad. |
+| **Verde (V)** | Video compuesto | Test pad **TV** (ver [01_hardware_esquemas.md §1](01_hardware_esquemas.md#1-salida-de-video--pin-tv-compuesto)) — **no confundir con el pad GND adyacente**, ver §6 | Señal directa, sin circuito adicional. Único punto de la Pi que puede dar esta señal — no está en el header. |
 | **Amarillo (A)** | Audio mono | Salida del **filtro RC** (después de C2), no directo a GPIO 18 | Ver §3 — nunca conectar el amarillo directo al GPIO. |
-| **Blanco (B)** | VCC (5V asumidos) | Pin físico **2 o 4** del header de 40 pines (rail de 5V) | **No conectar sin verificar el voltaje real que espera el modulador primero** — ver Precauciones. |
+| **Naranja (B)** | VCC (5V, ~14mA confirmado) | Pin físico **2 o 4** del header de 40 pines (rail de 5V), conector de pin directo | Ya validado como seguro — ver §6. |
 
 ```
                                 Raspberry Pi Zero W
@@ -60,7 +78,7 @@ del modulador se conecta a un punto distinto de la placa:
    (5V rail)            │                                    │
                        └───────────────────────────────────┘
                                        │
-                       Blanco(VCC) Amarillo(A) Rojo(V) Marrón(G)
+                       Naranja(VCC) Amarillo(A) Verde(V) Azul(G)
                        ┌────┴───────────┴─────────┴────────┴────┐
                        │     Modulador de RF (conector          │
                        │     mini-DIN 4 pines, propietario)      │
