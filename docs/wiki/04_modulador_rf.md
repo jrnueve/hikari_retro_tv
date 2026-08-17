@@ -6,43 +6,31 @@ concreto que usa este proyecto: convierte video compuesto + audio mono +
 alimentación 5V en una señal de RF para la entrada de antena de un
 televisor de tubo (CRT).
 
-## 1. El modulador y sus conexiones
+## 1. El modulador y su cableado hacia la Pi
 
 El modulador tiene 4 puntos de conexión identificados por letra
 serigrafiada directo en su placa: Video, Audio, VCC y GND. Los cables
 hacia la Pi están conectados directo a esos puntos (con conectores de pin
 al header de 40 pines de la Pi del lado correspondiente).
 
-Pinout (la **letra serigrafiada en la placa del modulador** es la
-referencia primaria — no cambia; el color de cable es solo identificación
-visual del tramo actual hacia la Pi):
+| Letra en placa | Función | Color de cable | Pin en la Pi |
+|---|---|---|---|
+| V | Video compuesto | Verde | Test pad **"TV"** (ver [01_hardware_esquemas.md §1](01_hardware_esquemas.md#1-salida-de-video--pin-tv-compuesto)) — no está en el header, es el único punto de la Pi que da esta señal |
+| A | Audio mono, vía filtro RC (nunca directo) | Amarillo | **GPIO18 / pin físico 12** del header, a través del filtro R1+C1+C2 (ver §2) |
+| B | VCC — **confirmado 5V DC, ~14mA** (ver §5) | Naranja | Pin físico **2 o 4** del header (rail de 5V), conector de pin directo |
+| G | GND / masa común | Azul | Test pad **"GND"** (junto al pad "TV") |
 
-| Letra en placa | Función | Color de cable |
-|-----------------|-----------------------------------|-----------------|
-| A               | Audio mono (vía filtro RC)        | Amarillo        |
-| B               | VCC — **confirmado 5V DC, ~14mA** (ver §6) | Naranja |
-| V               | Video compuesto                   | Verde           |
-| G               | GND / masa común                  | Azul            |
-
-## 2. Esquema de cableado — Pi Zero W → modulador
-
-La Zero W no tiene conector de video ni audio nativo, así que cada cable
-del modulador se conecta a un punto distinto de la placa:
-
-| Cable | Función | Color | Serigrafía (lado modulador) | Pin en la Pi |
-|---|---|---|---|---|
-| Video | Video compuesto | Verde | V | Test pad **"TV"** (ver [01_hardware_esquemas.md §1](01_hardware_esquemas.md#1-salida-de-video--pin-tv-compuesto)) — no está en el header, es el único punto de la Pi que da esta señal |
-| Audio | Audio mono, vía filtro RC (nunca directo) | Amarillo | A | **GPIO18 / pin físico 12** del header, a través del filtro R1+C1+C2 (ver §3) |
-| Alimentación | VCC — confirmado 5V DC, ~14mA (ver §6) | Naranja | B | Pin físico **2 o 4** del header (rail de 5V), conector de pin directo |
-| Masa | GND / retorno común | Azul | G | Test pad **"GND"** (junto al pad "TV") |
+La **letra serigrafiada en la placa del modulador** es la referencia
+primaria si hay alguna duda — el color de cable es solo identificación
+visual del tramo actual hacia la Pi.
 
 Notas importantes (no repetidas en la tabla para mantenerla legible):
 
 - **Orden de conexión**: masa (azul) primero, después video/audio, VCC
-  (naranja) al final — ver Precauciones (§5).
+  (naranja) al final — ver Precauciones (§4).
 - **Cuidado con la polaridad** entre los pads "TV" y "GND": están uno al
   lado del otro y son fáciles de invertir en la soldadura — ver el gotcha
-  documentado en §6.
+  documentado en §5.
 
 ```
                                 Raspberry Pi Zero W
@@ -76,7 +64,7 @@ Notas importantes (no repetidas en la tabla para mantenerla legible):
                                   Entrada de antena del TV CRT
 ```
 
-## 3. Solución de audio — no conectar el amarillo directo al GPIO
+## 2. Solución de audio — no conectar el amarillo directo al GPIO
 
 La Pi Zero W no tiene salida de audio analógica: el audio sale como PWM
 (onda cuadrada de alta frecuencia) por GPIO 18. **El cable amarillo del
@@ -105,7 +93,7 @@ No hace falta ningún componente adicional más allá del filtro ya
 documentado — no se requiere un DAC ni una etapa de amplificación extra
 para esta prueba.
 
-## 4. Configuración de software — config.txt validado
+## 3. Configuración de software — config.txt validado
 
 Estas son las líneas que ya se probaron en hardware real (Raspberry Pi OS
 Lite, Raspbian 13 "trixie", Zero W) y se confirmaron con osciloscopio:
@@ -143,9 +131,9 @@ PC antes del primer arranque).
 en algún momento se prueba con otro modulador/TV que espera NTSC, es la
 única línea que hace falta cambiar.
 
-## 5. Precauciones eléctricas antes de energizar el conjunto
+## 4. Precauciones eléctricas antes de energizar el conjunto
 
-- **VCC ya confirmado en 5V / ~14mA** (ver §6) mediante barrido gradual con
+- **VCC ya confirmado en 5V / ~14mA** (ver §5) mediante barrido gradual con
   fuente de banco de corriente limitada — seguro para conectar al riel de
   5V de la Pi. Si en el futuro se prueba con otro modulador sin verificar,
   repetir ese mismo procedimiento antes de conectarlo.
@@ -176,7 +164,7 @@ en algún momento se prueba con otro modulador/TV que espera NTSC, es la
   puesta a tierra antes de manipular la placa, especialmente en ambientes
   secos.
 
-## 6. Validación en hardware real (2026-08-17)
+## 5. Validación en hardware real (2026-08-17)
 
 **Placa identificada**: caja rotulada "SGT RF Unit Model 2088" — por la
 construcción (3 transistores 2SC9018/2SC3198, sin regulador de voltaje a
@@ -234,7 +222,7 @@ que la línea de video se vea "limpia" con el modulador ya oscilando.
 ## Referencias pendientes
 
 - [x] Confirmar el voltaje y consumo real de VCC del modulador con
-      multímetro — confirmado: 5V, ~14mA (ver §6).
+      multímetro — confirmado: 5V, ~14mA (ver §5).
 - [x] Documentar el modelo/marca específico del modulador — caja
       rotulada "SGT RF Unit Model 2088", sin datasheet propio, pinout
       inferido a mano y validado en banco.
