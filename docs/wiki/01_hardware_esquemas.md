@@ -10,15 +10,19 @@ antiguo.
 La Raspberry Pi Zero W expone video compuesto directamente sobre el pin de
 video del header GPIO (no hay conector RCA soldado de fábrica en el Zero).
 
-- **Pin físico**: pin 4 del header de 40 pines sin soldar de la Zero W
-  corresponde a la señal de TV compuesta (etiquetado a veces como "TV" en
-  los pinouts, ubicado junto al conector de audio/video de las Pi de placa
-  completa). En modelos con jack de 3.5mm de 4 polos (A/V), el video
-  compuesto va en el anillo correspondiente del jack; en la Zero W, al no
-  tener ese jack, se debe soldar un cable directamente al pin GPIO de TV out.
-- **Verificar el pinout exacto** contra el modelo/revisión física de la
-  placa antes de soldar (los pines de TV out no son GPIO de propósito
-  general, son una señal analógica dedicada del SoC).
+- **Ubicación física**: la Zero W **no** saca el video compuesto por el
+  header de 40 pines ni por un jack TRRS (eso es solo en los modelos de
+  placa completa tipo A+/B+/2/3 con jack de audio/video de 4 polos). En la
+  Zero/Zero W el compuesto sale por dos **test pads sin componente
+  soldado**, en el borde de la placa cerca del conector mini-HDMI,
+  etiquetados **"TV"** (señal) y **"GND"** (retorno) en la serigrafía del
+  PCB. Son agujeros pequeños sin pin — hay que soldar un cable fino
+  directo a cada uno.
+- **Verificar contra el datasheet de test pads** de la revisión física de
+  la placa en uso antes de soldar (la posición exacta puede variar
+  levemente entre Zero W v1.1 y Zero 2 W). No son GPIO de propósito
+  general, son una señal analógica dedicada del SoC — no confundir con
+  ningún GPIO numerado del header.
 - El nivel de señal es analógico compuesto estándar (~1 Vpp), compatible
   directamente con la entrada de video del modulador de RF.
 - Software: la señal se activa por configuración en `config.txt`
@@ -87,22 +91,21 @@ GPIO 18 (PWM) o-----/\/\/\-----+------------||------------o  AUDIO OUT
 
 ## 3. Conexión al modulador de RF
 
-- **Video**: cable desde el pin de TV out de la Pi hasta la entrada de video
-  compuesto (RCA amarillo o equivalente) del modulador.
-- **Audio**: salida del filtro RC (después de C2) hasta la entrada de audio
-  (RCA blanco/rojo o línea) del modulador.
-- **GND**: común entre Pi y modulador (ya sea por el propio cableado de
-  video/audio si son cables blindados con malla a GND, o con un cable
-  adicional de masa).
-- **Salida del modulador**: cable coaxial RF hacia la entrada de antena del
-  televisor antiguo, sintonizado en un canal VHF libre (típicamente canal 3
-  o 4, según región/modulador).
+El modulador específico usado en este proyecto tiene un pinout propietario
+sobre un conector mini-DIN de 4 pines (no es S-Video real) que combina
+video, audio, VCC y GND en un solo cable. El detalle completo del pinout,
+el esquema de cableado punto a punto, y las precauciones eléctricas antes
+de energizar el conjunto están en
+[04_modulador_rf.md](04_modulador_rf.md).
 
 ## Referencias pendientes
 
-- [ ] Confirmar pinout exacto de TV out para la revisión física de la Zero W
-      en uso (foto + multímetro antes de soldar).
+- [x] Confirmar pinout exacto de TV out para la revisión física de la Zero W
+      en uso — confirmado con osciloscopio (2026-08-16), ver
+      [04_modulador_rf.md](04_modulador_rf.md).
 - [ ] Agregar foto/diagrama del circuito armado en protoboard o placa
       perforada a `hardware/`.
-- [ ] Documentar modelo específico del modulador de RF usado y sus niveles
-      de entrada esperados (impedancia, Vpp de video, nivel de línea de audio).
+- [x] Documentar modelo específico del modulador de RF usado y sus niveles
+      de entrada esperados — ver [04_modulador_rf.md](04_modulador_rf.md)
+      (pinout identificado a mano, sin datasheet — voltaje VCC todavía sin
+      confirmar con multímetro).

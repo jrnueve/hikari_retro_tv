@@ -2,15 +2,25 @@
 
 ## Imagen base
 
-- **Raspberry Pi OS Lite** (32 bits recomendado para Pi Zero W — el SoC es
-  ARMv6, no soporta el kernel/userland de 64 bits). Sin entorno de
-  escritorio: esto es intencional, todo el renderizado va directo a
-  framebuffer, no hay X11/Wayland corriendo.
-- Flashear con Raspberry Pi Imager o `rpi-imager`, habilitando en las
-  opciones avanzadas (Ctrl+Shift+X en el Imager):
-  - Hostname (ej. `hikari-tv.local`)
-  - SSH habilitado (usuario/contraseña o clave pública)
-  - WiFi (SSID/password) si no se va a usar Ethernet
+- **Raspberry Pi OS Lite, 32-bit** (obligatorio para Pi Zero W — el SoC es
+  BCM2835/ARMv6 y **no puede bootear ningún kernel de 64 bits**, sin
+  excepción). Sin entorno de escritorio: esto es intencional, todo el
+  renderizado va directo a framebuffer, no hay X11/Wayland corriendo.
+- Flashear con Raspberry Pi Imager o `rpi-imager`.
+  - **Importante en "Choose Device"**: elegir específicamente
+    **"Raspberry Pi Zero"**, NO "Raspberry Pi Zero 2 W". El Zero 2 W usa
+    otro SoC (BCM2710, ARMv8) y su imagen de 64-bit no trae los archivos
+    `bcm2708-rpi-zero-w.dtb` ni `kernel.img` (armhf) que la Zero W original
+    necesita para arrancar. Verificar después de flashear que la partición
+    boot de la SD tenga esos dos archivos antes de mover la SD a la Pi.
+  - En "Choose OS": Raspberry Pi OS Lite (32-bit).
+  - En las opciones avanzadas (⚙️ / Ctrl+Shift+X): hostname, SSH habilitado
+    (password o clave pública), WiFi si no se usa Ethernet, timezone.
+- El Imager moderno (Bookworm/trixie) provisiona el primer boot con
+  archivos `user-data`/`network-config`/`meta-data` (estilo cloud-init) en
+  la raíz de la partición boot, en vez del viejo esquema `userconf.txt` +
+  `ssh` + `wpa_supplicant.conf`. Si algo del primer boot no toma (SSH,
+  WiFi), revisar esos archivos antes que nada.
 
 Si se flashea manualmente sin el Imager, habilitar SSH creando un archivo
 vacío llamado `ssh` (sin extensión) en la partición `boot` de la SD.
@@ -18,7 +28,7 @@ vacío llamado `ssh` (sin extensión) en la partición `boot` de la SD.
 ## Primer arranque
 
 ```bash
-ssh pi@hikari-tv.local
+ssh pi@hikaritv.local
 sudo raspi-config   # opcional: expandir filesystem, timezone, etc.
 sudo apt update && sudo apt full-upgrade -y
 ```
@@ -27,16 +37,18 @@ sudo apt update && sudo apt full-upgrade -y
 
 Ubicación según versión de Raspberry Pi OS:
 
-- **Bookworm (2023+)**: `/boot/firmware/config.txt`
+- **Bookworm/trixie (2023+)**: `/boot/firmware/config.txt`
 - **Bullseye o anterior**: `/boot/config.txt`
 
-Agregar (o descomentar/modificar) las siguientes líneas:
+Agregar (o descomentar/modificar) las siguientes líneas — este es el
+**set validado en hardware real** (Zero W, Raspbian 13 "trixie",
+2026-08-16, confirmado con osciloscopio):
 
 ```ini
 # --- Hikari TV: salida de video compuesto (TV Out) ---
 enable_tvout=1
-sdtv_mode=0
-# sdtv_mode: 0 = NTSC, 2 = PAL. Ajustar segun el estandar de la TV/modulador.
+sdtv_mode=2
+# sdtv_mode: 0 = NTSC, 2 = PAL. Este proyecto usa PAL (Argentina).
 sdtv_aspect=1
 # sdtv_aspect: 1 = 4:3 (estandar para un TV antiguo)
 
@@ -47,23 +59,36 @@ gpu_mem=128
 
 # --- Hikari TV: audio PWM remapeado a GPIO 18/19 ---
 dtoverlay=audremap,pins_18_19
-# Sin este overlay, el PWM de audio sale por los pines de audio "de fabrica"
+audio_pwm_mode=2
+# Sin el overlay, el PWM de audio sale por los pines de audio "de fabrica"
 # (GPIO 40/41 en el SoC, no expuestos en el header de la Zero W). Con el
 # overlay, sale por GPIO 18 (canal izquierdo) y GPIO 19 (canal derecho),
 # que si estan expuestos en el header de 40 pines de la Zero W.
+# audio_pwm_mode=2 usa el modo de mayor calidad del PWM de audio.
+
+# --- Hikari TV: DRM VC4 V3D (KMS) deshabilitado a proposito ---
+# Las imagenes recientes de Raspberry Pi OS traen dtoverlay=vc4-kms-v3d
+# activado por default. Ese driver reemplaza el stack legacy (dispmanx/
+# MMAL) que este proyecto necesita para el TV out compuesto y para la
+# decodificacion por hardware de cvlc. Si esta linea esta presente y
+# descomentada en el config.txt final, COMENTARLA (o el video compuesto
+# no va a funcionar):
+#dtoverlay=vc4-kms-v3d
+#max_framebuffers=2
 ```
 
 Notas:
 
 - `enable_tvout=1` puede no ser necesaria en todas las versiones del
   firmware (en algunas basta con `sdtv_mode`), pero se deja explícita para
-  forzar la detección. Verificar en el primer boot con un TV/monitor
-  compuesto conectado.
-- Si al bootear no aparece imagen en compuesto, revisar también que no haya
-  un `hdmi_force_hotplug=1` conflictivo o un `dtoverlay=vc4-kms-v3d` activo
-  (el driver KMS de escritorio interfiere con el TV out clásico en Lite).
+  forzar la detección.
+- **Confirmado en hardware real**: con estas líneas, `/dev/fb0` queda
+  presente y `vcgencmd get_lcd_info` devuelve `720 576 24` (resolución PAL
+  correcta), sin el módulo `vc4` cargado (`lsmod | grep vc4` vacío).
 - `sdtv_mode` y `sdtv_aspect` deben coincidir con el estándar de video que
-  espera el modulador de RF (revisar su datasheet/manual).
+  espera el modulador de RF — ver
+  [04_modulador_rf.md](04_modulador_rf.md) para el modulador específico
+  de este proyecto.
 
 ## Verificación post-reboot
 
