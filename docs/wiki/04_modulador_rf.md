@@ -219,6 +219,25 @@ de RF (diseño simple de 3 transistores). Es esperable con este hardware y
 no indica falla; el criterio de éxito real es la imagen en el TV/RF, no
 que la línea de video se vea "limpia" con el modulador ya oscilando.
 
+**El gotcha de polaridad se repitió al recablear a conectores de pin**: el
+mismo error (video/GND invertidos) volvió a aparecer después de reemplazar
+las soldaduras fijas por cables con conector de pin al header — esta vez
+en los cables hacia el modulador (verde/azul), no en los del conversor
+VGA. **Lección reforzada**: cada vez que se rehace o reemplaza el
+cableado de video/GND (soldadura nueva, conector nuevo, etc.), volver a
+verificar la polaridad antes de dar por buena la conexión — no asumir que
+un cableado corregido una vez se mantiene correcto tras una modificación
+física posterior.
+
+**Prueba de RF exitosa — video confirmado (2026-08-17)**: con polaridad
+corregida, alimentación conectada y la Pi en PAL, apareció la imagen de la
+consola de Linux de forma estable en **canal ~52** (numeración del
+sintonizador del conversor usado para la prueba, no necesariamente el
+canal VHF estándar 3/4 — la numeración exacta puede variar según el
+equipo receptor). Confirma la cadena completa Pi → video/GND → modulador
+alimentado → RF → receptor funcionando de punta a punta para video. Audio
+todavía no conectado (falta soldar/conectar el amarillo vía filtro RC).
+
 ## Referencias pendientes
 
 - [x] Confirmar el voltaje y consumo real de VCC del modulador con
@@ -227,6 +246,8 @@ que la línea de video se vea "limpia" con el modulador ya oscilando.
       rotulada "SGT RF Unit Model 2088", sin datasheet propio, pinout
       inferido a mano y validado en banco.
 - [ ] Foto del conjunto cableado en `hardware/` una vez armado.
-- [ ] Confirmar sintonía de canal RF de salida (canal VHF 3 o 4) una vez
-      conectado al TV.
-- [ ] Prueba funcional completa: video + audio + RF real en el TV CRT.
+- [x] Confirmar sintonía de canal RF de salida — imagen estable encontrada
+      en canal ~52 con un conversor RF-a-VGA como receptor de prueba;
+      falta confirmar el canal real en el TV CRT definitivo (puede diferir).
+- [ ] Conectar audio (amarillo, vía filtro RC) — pendiente.
+- [ ] Prueba funcional completa video + audio + RF real en el TV CRT.

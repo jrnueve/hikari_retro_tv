@@ -34,11 +34,14 @@ Convención: `[ ]` pendiente, `[~]` en curso, `[x]` cerrado.
       esperado — Raspbian 13 "trixie")
 - [x] Documentar modulador de RF específico y su cableado —
       [docs/wiki/04_modulador_rf.md](docs/wiki/04_modulador_rf.md)
-- [ ] Verificar con multímetro el voltaje/consumo real de VCC del
-      modulador antes de conectarlo al riel de 5V de la Pi (ver
-      Precauciones en 04_modulador_rf.md)
-- [ ] Conectar físicamente el modulador (video, audio filtrado, GND, VCC)
-      y confirmar imagen en el TV CRT
+- [x] Verificar con multímetro el voltaje/consumo real de VCC del
+      modulador — confirmado 5V, ~14mA (ver 04_modulador_rf.md §5)
+- [x] Conectar video + GND + VCC del modulador y confirmar imagen por RF
+      — confirmado con un conversor RF-a-VGA como receptor de prueba,
+      imagen estable de la consola de Linux en canal ~52 (2026-08-17)
+- [ ] Conectar audio (amarillo, vía filtro RC) al modulador
+- [ ] Confirmar imagen (y audio) en el TV CRT definitivo — el conversor
+      usado hasta ahora fue solo para validar, no es el objetivo final
 
 ## Fase 3 — Prueba rápida de streaming (software)
 
