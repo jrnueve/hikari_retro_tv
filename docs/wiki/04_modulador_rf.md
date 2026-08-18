@@ -270,6 +270,14 @@ y `speaker-test -c1 -f 440` generando un tono de prueba:
   sucesivas (typical del patrón de conexiones flojas de esta sesión), pero
   la señal en la salida del filtro se re-confirmó estable con el
   osciloscopio cuando se volvió a chequear.
+- **Evidencia adicional**: en el canal de audio (ej. canal 59, +2 respecto
+  al canal de video 57), al generar el tono de 440Hz aparecen bandas
+  horizontales gruesas en la imagen que se correlacionan con el tono, sin
+  sonido audible. Es el artefacto típico de intentar demodular una
+  subportadora de audio FM con un demodulador de video AM — confirma que
+  el modulador sí genera la subportadora de audio correctamente, y que la
+  limitación es exclusivamente del receptor de prueba (sin demodulación
+  FM de audio propia), no del circuito construido.
 
 **Conclusión de esta etapa**: video y audio están validados a nivel de
 circuito (Pi genera ambos correctamente, el filtro de audio funciona, el

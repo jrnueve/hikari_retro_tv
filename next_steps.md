@@ -27,8 +27,10 @@ Convención: `[ ]` pendiente, `[~]` en curso, `[x]` cerrado.
 - [x] Verificar señal de video compuesto con osciloscopio (Hantek DSO2D15) —
       confirmado PAL 720x576 vía `vcgencmd get_lcd_info`, burst de color
       visible en la forma de onda (2026-08-16)
-- [ ] Verificar salida de audio con `speaker-test` o `aplay` (pendiente,
-      requiere el filtro RC armado y conectado)
+- [x] Verificar salida de audio con `speaker-test` — confirmado con
+      osciloscopio en la salida del filtro (tono 440Hz limpio); nota:
+      el audio mono sale por GPIO19/pin35, no GPIO18/pin12 (corregido
+      en la doc)
 - [x] Documentar en `docs/wiki/` desvíos respecto a lo planeado (pin de TV
       out real vs. lo asumido inicialmente, versión de OS más nueva de lo
       esperado — Raspbian 13 "trixie")
@@ -39,9 +41,17 @@ Convención: `[ ]` pendiente, `[~]` en curso, `[x]` cerrado.
 - [x] Conectar video + GND + VCC del modulador y confirmar imagen por RF
       — confirmado con un conversor RF-a-VGA como receptor de prueba,
       imagen estable de la consola de Linux en canal ~52 (2026-08-17)
-- [ ] Conectar audio (amarillo, vía filtro RC) al modulador
-- [ ] Confirmar imagen (y audio) en el TV CRT definitivo — el conversor
-      usado hasta ahora fue solo para validar, no es el objetivo final
+- [x] Conectar audio (amarillo, vía filtro RC en GPIO19) al modulador —
+      confirmado a nivel de circuito y por RF (canales 59/83, con bandas
+      correlacionadas al tono — evidencia de subportadora de audio FM
+      real, el conversor de prueba no la demodula pero el modulador sí
+      la genera)
+- [ ] **BLOQUEADO — a la espera del TV CRT real**: confirmar imagen +
+      audio simultáneos con sintonía estable. El conversor RF-a-VGA usado
+      hasta ahora fue solo herramienta de validación (sin demodulación
+      intercarrier de audio, sintonía poco confiable) — no sirve para la
+      prueba definitiva. Circuito completo (video + audio + alimentación)
+      ya validado y listo para probar en el TV real apenas esté disponible.
 
 ## Fase 3 — Prueba rápida de streaming (software)
 
