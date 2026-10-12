@@ -1,0 +1,19 @@
+[Unit]
+Description=Hikari Retro TV - televisor IPTV blanco y negro
+After=network-online.target sound.target
+Wants=network-online.target
+# Los dos escriben en el framebuffer y usan la salida de audio
+Conflicts=tvtestd.service
+
+[Service]
+Type=simple
+User=pi
+# Consola virtual sin getty: nada de texto encima del video
+ExecStartPre=+/bin/chvt 8
+ExecStart=/usr/bin/python3 /usr/local/bin/hikaritvd
+Restart=always
+RestartSec=3
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target

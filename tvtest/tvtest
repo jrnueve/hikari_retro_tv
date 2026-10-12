@@ -1,0 +1,48 @@
+#!/bin/bash
+# tvtest - control del servicio tvtestd por socket UNIX local.
+# En bash + nc (netcat-openbsd) en lugar de Python: en la Pi Zero el arranque
+# de python3 tarda ~0.7 s, con nc el comando responde en ~30 ms.
+
+SOCKET=/run/tvtest.sock
+SERVICIO=tvtestd
+
+uso() {
+    cat <<'EOF'
+uso: tvtest <comando>
+
+  pattern list          lista de patrones (* = actual)
+  pattern <nombre>      white gray black crosshatch circle graysteps window resolution
+  tone <Hz>             enciende el tono (100-10000 Hz)
+  tone on | off         enciende con la ultima frecuencia | apaga
+  volume <0-100>        volumen del tono en %
+  status                patron, tono, volumen y modo de video activo
+
+  start | stop | restart        servicio (sudo systemctl)
+  autostart on | off            arranque automatico al encender (sudo systemctl)
+EOF
+}
+
+case "${1:-}" in
+    ""|-h|--help|help)
+        uso
+        exit 0 ;;
+    start|stop|restart)
+        exec sudo systemctl "$1" "$SERVICIO" ;;
+    autostart)
+        case "${2:-}" in
+            on)  exec sudo systemctl enable "$SERVICIO" ;;
+            off) exec sudo systemctl disable "$SERVICIO" ;;
+            *)   echo "uso: tvtest autostart on|off" >&2; exit 2 ;;
+        esac ;;
+esac
+
+if [ ! -S "$SOCKET" ]; then
+    echo "error: el servicio no esta corriendo (tvtest start)" >&2
+    exit 1
+fi
+resp=$(printf '%s\n' "$*" | nc -N -U "$SOCKET") || {
+    echo "error: no se pudo hablar con el servicio en $SOCKET" >&2
+    exit 1
+}
+printf '%s\n' "$resp"
+[[ "$resp" != error* ]]

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Hikari TV - prueba rapida de streaming HLS
+# Hikari Retro TV - prueba rapida de streaming HLS
 #
 # Renderiza el stream directo sobre el framebuffer (dispmanx/MMAL, sin X11)
 # y fuerza la salida de audio al dispositivo ALSA PWM (GPIO 18) configurado
@@ -32,7 +32,7 @@ if [[ "${INPUT_URL}" == *youtube.com/* || "${INPUT_URL}" == *youtu.be/* ]]; then
     STREAM_URL="$(yt-dlp -f 'best[ext=mp4]/best' -g "${INPUT_URL}")"
 fi
 
-echo "Hikari TV - test_stream.sh"
+echo "Hikari Retro TV - test_stream.sh"
 echo "Stream: ${STREAM_URL}"
 echo "Salida de audio ALSA: ${ALSA_DEVICE} (verificar con 'aplay -l' si falla)"
 

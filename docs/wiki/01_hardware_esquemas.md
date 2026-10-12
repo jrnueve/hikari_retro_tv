@@ -1,6 +1,6 @@
 # 01 — Esquemas de hardware
 
-Este documento describe las dos salidas analógicas que usa Hikari TV: video
+Este documento describe las dos salidas analógicas que usa Hikari Retro TV: video
 compuesto (TV Out) y audio PWM filtrado, ambas hacia las entradas de un
 modulador de RF que a su vez se conecta al conector de antena del televisor
 antiguo.

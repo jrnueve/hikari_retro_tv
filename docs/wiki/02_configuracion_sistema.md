@@ -45,19 +45,19 @@ Agregar (o descomentar/modificar) las siguientes líneas — este es el
 2026-08-16, confirmado con osciloscopio):
 
 ```ini
-# --- Hikari TV: salida de video compuesto (TV Out) ---
+# --- Hikari Retro TV: salida de video compuesto (TV Out) ---
 enable_tvout=1
 sdtv_mode=2
 # sdtv_mode: 0 = NTSC, 2 = PAL. Este proyecto usa PAL (Argentina).
 sdtv_aspect=1
 # sdtv_aspect: 1 = 4:3 (estandar para un TV antiguo)
 
-# --- Hikari TV: memoria de GPU para decodificacion ---
+# --- Hikari Retro TV: memoria de GPU para decodificacion ---
 gpu_mem=128
 # 128MB es un piso razonable para decodificar H.264 via hardware en la Zero W.
 # Si el player usa MMAL/OMX para decodificacion por hardware, no bajar de 128.
 
-# --- Hikari TV: audio PWM remapeado a GPIO 18/19 ---
+# --- Hikari Retro TV: audio PWM remapeado a GPIO 18/19 ---
 dtoverlay=audremap,pins_18_19
 audio_pwm_mode=2
 # Sin el overlay, el PWM de audio sale por los pines de audio "de fabrica"
@@ -68,7 +68,7 @@ audio_pwm_mode=2
 # 35, no por GPIO18/pin 12 pese a la convencion habitual de "izquierdo=18".
 # audio_pwm_mode=2 usa el modo de mayor calidad del PWM de audio.
 
-# --- Hikari TV: DRM VC4 V3D (KMS) deshabilitado a proposito ---
+# --- Hikari Retro TV: DRM VC4 V3D (KMS) deshabilitado a proposito ---
 # Las imagenes recientes de Raspberry Pi OS traen dtoverlay=vc4-kms-v3d
 # activado por default. Ese driver reemplaza el stack legacy (dispmanx/
 # MMAL) que este proyecto necesita para el TV out compuesto y para la

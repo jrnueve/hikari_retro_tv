@@ -1,0 +1,444 @@
+#EXTM3U
+# Categoria: musica  |  hasta 720x576 pixeles  |  de relevamiento_sd.json
+#EXTINF:-1 tvg-id="MBCFM.ae" tvg-name="MBC FM" tvg-country="AE" tvg-language="eng" group-title="musica" resolution="832x468" codec="h264",MBC FM
+https://dbbv9umqcd7cs.cloudfront.net/out/v1/db15b75c3cc0400c91961468d6a232ac/index.m3u8
+#EXTINF:-1 tvg-id="BeatsRadio.ar" tvg-name="Beats Radio" tvg-country="AR" tvg-language="spa" group-title="musica" resolution="720x480" codec="h264",Beats Radio
+https://videostream.shockmedia.com.ar:19360/beatsradio/beatsradio.m3u8
+#EXTINF:-1 tvg-id="La100.ar" tvg-name="La 100" tvg-country="AR" tvg-language="spa" group-title="musica" resolution="854x480" codec="h264",La 100
+https://mdstrm.com/live-stream-playlist/68b74fd1d6512526f1f7c75a.m3u8
+#EXTINF:-1 tvg-id="AntenneKaernten.at" tvg-name="Antenne Kaernten" tvg-country="AT" tvg-language="deu" group-title="musica" resolution="854x480" codec="h264",Antenne Kaernten
+https://60efd7a2b4d02.streamlock.net/a_kaernten/ngrp:livestream_all/playlist.m3u8
+#EXTINF:-1 tvg-id="AntenneSteiermark.at" tvg-name="Antenne Steiermark" tvg-country="AT" tvg-language="deu" group-title="musica" resolution="854x480" codec="h264",Antenne Steiermark
+https://60efd7a2b4d02.streamlock.net/a_steiermark/ngrp:livestream_all/playlist.m3u8
+#EXTINF:-1 tvg-id="Kronehit.at" tvg-name="Kronehit" tvg-country="AT" tvg-language="deu" group-title="musica" resolution="640x360" codec="h264",Kronehit
+https://bitcdn-kronehit.bitmovin.com/v2/hls/playlist.m3u8
+#EXTINF:-1 tvg-id="FunVision.be" tvg-name="Fun Vision" tvg-country="BE" tvg-language="fra" group-title="musica" resolution="853x480" codec="h264",Fun Vision
+https://funradiovisionhd.vedge.infomaniak.com/livecast/ik:funradiovisionhd/manifest.m3u8
+#EXTINF:-1 tvg-id="Klara.be" tvg-name="Klara" tvg-country="BE" tvg-language="nld" group-title="musica" resolution="764x432" codec="h264",Klara
+https://live.vrtcdn.be/groupb/live/9c429b62-e160-417a-b438-cdf985bcd352/live.isml/.m3u8
+#EXTINF:-1 tvg-id="MNM.be" tvg-name="MNM" tvg-country="BE" tvg-language="nld" group-title="musica" resolution="764x432" codec="h264",MNM
+https://live.vrtcdn.be/groupa/live/1718328a-5c53-410d-87ec-d8db68124cfc/live.isml/.m3u8
+#EXTINF:-1 tvg-id="StuBru.be" tvg-name="StuBru" tvg-country="BE" tvg-language="nld" group-title="musica" resolution="764x432" codec="h264",StuBru
+https://live.vrtcdn.be/groupb/live/450aa9d1-7173-47f3-aaaa-9701426f8ddd/live.isml/.m3u8
+#EXTINF:-1 tvg-id="CityTV.bg" tvg-name="City TV" tvg-country="BG" tvg-language="bul" group-title="musica" resolution="720x576" codec="h264",City TV
+https://tv.city.bg/play/tshls/citytv/index.m3u8
+#EXTINF:-1 tvg-id="MagicTV.bg" tvg-name="Magic TV" tvg-country="BG" tvg-language="bul" group-title="musica" resolution="640x360" codec="h264",Magic TV
+https://bss1.neterra.tv/magictv/magictv.m3u8
+#EXTINF:-1 tvg-id="TheVoice.bg" tvg-name="The Voice" tvg-country="BG" tvg-language="bul" group-title="musica" resolution="640x360" codec="h264",The Voice
+https://bss1.neterra.tv/thevoice/thevoice.m3u8
+#EXTINF:-1 tvg-id="TiankovFolk.bg" tvg-name="Tiankov Folk" tvg-country="BG" tvg-language="bul" group-title="musica" resolution="720x576" codec="h264",Tiankov Folk
+https://streamer103.neterra.tv/tiankov-folk/live.m3u8
+#EXTINF:-1 tvg-id="TiankovOrientFolk.bg" tvg-name="Tiankov Orient Folk" tvg-country="BG" tvg-language="bul" group-title="musica" resolution="720x576" codec="h264",Tiankov Orient Folk
+https://streamer103.neterra.tv/tiankov-orient/live.m3u8
+#EXTINF:-1 tvg-id="RadioClasicaTV.bo" tvg-name="Radio Clasica TV" tvg-country="BO" tvg-language="spa" group-title="musica" resolution="852x480" codec="h264",Radio Clasica TV
+https://ares.disfrutaenlared.com:1936/clasica/clasica/playlist.m3u8
+#EXTINF:-1 tvg-id="TikTokRadioBrasil.br" tvg-name="TikTok Radio Brasil" tvg-country="BR" tvg-language="por" group-title="musica" resolution="842x474" codec="h264",TikTok Radio Brasil
+https://d1bl6tskrpq9ze.cloudfront.net/hls/master.m3u8?ads.xumo_channelId=99992529
+#EXTINF:-1 tvg-id="FirstMusicChannel.by" tvg-name="First Music Channel" tvg-country="BY" tvg-language="rus" group-title="musica" resolution="720x576" codec="h264",First Music Channel
+http://hz1.teleport.cc/HLS/SD.m3u8
+#EXTINF:-1 tvg-id="FirstMusicChannel.by" tvg-name="First Music Channel" tvg-country="BY" tvg-language="rus" group-title="musica" resolution="720x576" codec="h264",First Music Channel
+http://rtmp.one.by:1200
+#EXTINF:-1 tvg-id="FirstMusicChannelRussia.by" tvg-name="First Music Channel Russia" tvg-country="BY" tvg-language="rus" group-title="musica" resolution="720x576" codec="h264",First Music Channel Russia
+http://rtmp.one.by:2200
+#EXTINF:-1 tvg-id="MovieMusicbyStingray.ca" tvg-name="Movie Music by Stingray" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="842x474" codec="h264",Movie Music by Stingray
+https://lotus.stingray.com/manifest/cmusic-cme004-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="QelloConcertsbyStingray.ca" tvg-name="Qello Concerts by Stingray" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="842x474" codec="h264",Qello Concerts by Stingray
+https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883052
+#EXTINF:-1 tvg-id="QelloConcertsbyStingray.ca" tvg-name="Qello Concerts by Stingray" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="842x474" codec="h264",Qello Concerts by Stingray
+https://lotus.stingray.com/manifest/qello-qello001-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="StingrayCityscapes.ca" tvg-name="Stingray Cityscapes" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="720x404" codec="h264",Stingray Cityscapes
+https://aka-live1050.delivery.roku.com/7572d640-7373-4137-8b14-a3afff395349/t2-origin/out/v1/live.m3u8
+#EXTINF:-1 tvg-id="StingrayClassicRock.ca" tvg-name="Stingray Classic Rock" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",Stingray Classic Rock
+https://lotus.stingray.com/manifest/ose-101ads-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="StingrayClassica.ca" tvg-name="Stingray Classica" tvg-country="CA" tvg-language="eng;deu;spa;fra" group-title="musica" resolution="842x474" codec="h264",Stingray Classica
+https://lotus.stingray.com/manifest/classica-cla008-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="StingrayCozyCafe.ca" tvg-name="Stingray Cozy Cafe" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="720x404" codec="h264",Stingray Cozy Cafe
+https://aka-live1050.delivery.roku.com/372c813e-1fb9-41d4-a4d0-5fbd803659c5/t2-origin/out/v1/live.m3u8
+#EXTINF:-1 tvg-id="StingrayDJAZZ.ca" tvg-name="Stingray DJAZZ" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="842x474" codec="h264",Stingray DJAZZ
+https://lotus.stingray.com/manifest/djazz-djaads-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="StingrayEasyListening.ca" tvg-name="Stingray Easy Listening" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",Stingray Easy Listening
+https://lotus.stingray.com/manifest/ose-137ads-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="StingrayEverything80s.ca" tvg-name="Stingray Everything '80s" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",Stingray Everything '80s
+https://lotus.stingray.com/manifest/ose-128ads-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="StingrayFlashback70s.ca" tvg-name="Stingray Flashback 70's" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",Stingray Flashback 70's
+https://lotus.stingray.com/manifest/ose-115ads-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="StingrayGreatestHits.ca" tvg-name="Stingray Greatest Hits" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",Stingray Greatest Hits
+https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883053
+#EXTINF:-1 tvg-id="StingrayHitList.ca" tvg-name="Stingray Hit List" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",Stingray Hit List
+https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883054
+#EXTINF:-1 tvg-id="StingrayHitList.ca" tvg-name="Stingray Hit List" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",Stingray Hit List
+https://lotus.stingray.com/manifest/ose-107ads-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="StingrayHolidayHits.ca" tvg-name="Stingray Holiday Hits" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",Stingray Holiday Hits
+https://lotus.stingray.com/manifest/ose-155ads-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="StingrayHolidayscapes.ca" tvg-name="Stingray Holidayscapes" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",Stingray Holidayscapes
+https://d10cyxntpn0bwm.cloudfront.net/master.m3u8
+#EXTINF:-1 tvg-id="StingrayHolidayscapes.ca" tvg-name="Stingray Holidayscapes" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="842x474" codec="h264",Stingray Holidayscapes
+https://lotus.stingray.com/manifest/holidayscapes-hol001ads_hol001-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="StingrayHolidayscapes.ca" tvg-name="Stingray Holidayscapes" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",Stingray Holidayscapes
+https://plextv.ott-channels.stingray.com/holidayscapes/master.m3u8
+#EXTINF:-1 tvg-id="StingrayHotCountry.ca" tvg-name="Stingray Hot Country" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",Stingray Hot Country
+https://lotus.stingray.com/manifest/ose-108ads-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="StingrayJukeboxOldies.ca" tvg-name="Stingray Jukebox Oldies" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",Stingray Jukebox Oldies
+https://lotus.stingray.com/manifest/ose-021ads-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="StingrayKaraoke.ca" tvg-name="Stingray Karaoke" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="842x474" codec="h264",Stingray Karaoke
+https://lotus.stingray.com/manifest/karaoke-kar000-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="StingrayNaturescape.ca" tvg-name="Stingray Naturescape" tvg-country="CA" tvg-language="eng;tur" group-title="musica" resolution="842x474" codec="h264",Stingray Naturescape
+https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883056
+#EXTINF:-1 tvg-id="StingrayNaturescape.ca" tvg-name="Stingray Naturescape" tvg-country="CA" tvg-language="eng;tur" group-title="musica" resolution="842x474" codec="h264",Stingray Naturescape
+https://lotus.stingray.com/manifest/naturescape-a003-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="StingrayNothinBut90s.ca" tvg-name="Stingray Nothin' But 90s" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",Stingray Nothin' But 90s
+https://lotus.stingray.com/manifest/ose-142ads-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="StingrayPopAdult.ca" tvg-name="Stingray Pop Adult" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",Stingray Pop Adult
+https://lotus.stingray.com/manifest/ose-104ads-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="StingrayRememberthe80s.ca" tvg-name="Stingray Remember the 80s" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",Stingray Remember the 80s
+https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883071
+#EXTINF:-1 tvg-id="StingrayRockAlternative.ca" tvg-name="Stingray Rock Alternative" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",Stingray Rock Alternative
+https://lotus.stingray.com/manifest/ose-102ads-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="StingrayRomanceLatino.ca" tvg-name="Stingray Romance Latino" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",Stingray Romance Latino
+https://lotus.stingray.com/manifest/ose-202ads-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="StingraySmoothJazz.ca" tvg-name="Stingray Smooth Jazz" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",Stingray Smooth Jazz
+https://lotus.stingray.com/manifest/ose-140ads-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="StingraySoulStorm.ca" tvg-name="Stingray Soul Storm" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",Stingray Soul Storm
+https://lotus.stingray.com/manifest/ose-134ads-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="StingrayTheSpa.ca" tvg-name="Stingray The Spa" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",Stingray The Spa
+https://lotus.stingray.com/manifest/ose-122ads-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="StingrayTikTokRadio.ca" tvg-name="Stingray TikTok Radio" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="842x474" codec="h264",Stingray TikTok Radio
+https://d3f4oii5n0oeqi.cloudfront.net/11701/88814594/hls/master.m3u8?ads.xumo_channelId=88814594
+#EXTINF:-1 tvg-id="StingrayTodaysKPop.ca" tvg-name="Stingray Today's K-Pop" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",Stingray Today's K-Pop
+https://lotus.stingray.com/manifest/ose-317ads-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="StingrayTodaysLatinPop.ca" tvg-name="Stingray Today's Latin Pop" tvg-country="CA" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",Stingray Today's Latin Pop
+https://lotus.stingray.com/manifest/ose-190ads-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="13Festival.cl" tvg-name="13 Festival" tvg-country="CL" tvg-language="spa" group-title="musica" resolution="854x480" codec="h264",13 Festival
+https://origin.dpsgo.com/ssai/event/Nftd0fM2SXasfDlRphvUsg/master.m3u8
+#EXTINF:-1 tvg-id="LaClave.cl" tvg-name="La Clave" tvg-country="CL" tvg-language="spa" group-title="musica" resolution="854x480" codec="h264",La Clave
+https://unlimited1-cl-isp.dps.live/laclavetv/laclavetv.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="Pauta.cl" tvg-name="Pauta" tvg-country="CL" tvg-language="spa" group-title="musica" resolution="854x480" codec="h264",Pauta
+https://redirector.rudo.video/hls-video/ey6283je82983je9823je8jowowiekldk9838274/pautatv/pautatv.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="RadioDuna.cl" tvg-name="Radio Duna" tvg-country="CL" tvg-language="spa" group-title="musica" resolution="854x480" codec="h264",Radio Duna
+https://mdstrm.com/live-stream-playlist/67ed8a8d6db4af9a0188555c.m3u8
+#EXTINF:-1 tvg-id="RadioPudahuel.cl" tvg-name="Radio Pudahuel" tvg-country="CL" tvg-language="spa" group-title="musica" resolution="854x480" codec="h264",Radio Pudahuel
+https://unlimited2-cl-isp.dps.live/pudahueltv/pudahueltv.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="RetromusicaTelevision.cl" tvg-name="Retromusica Television" tvg-country="CL" tvg-language="spa" group-title="musica" resolution="720x368" codec="h264",Retromusica Television
+https://vdochile.com:3864/stream/play.m3u8
+#EXTINF:-1 tvg-id="ClaroMusicaTV.co" tvg-name="Claro Musica TV" tvg-country="CO" tvg-language="spa" group-title="musica" resolution="720x480" codec="h264",Claro Musica TV
+http://45.171.64.30:6060/play/a010
+#EXTINF:-1 tvg-id="LaKalle.co" tvg-name="La Kalle" tvg-country="CO" tvg-language="spa" group-title="musica" resolution="854x480" codec="h264",La Kalle
+https://mdstrm.com/live-stream-playlist/58d191f07290fbb058025843.m3u8
+#EXTINF:-1 tvg-id="VAMTV.cw" tvg-name="VAM TV" tvg-country="CW" tvg-language="nld;pap;eng" group-title="musica" resolution="852x480" codec="h264",VAM TV
+https://sincerecloud.stream/loadbalancer/public/J9EmQQGf.m3u8
+#EXTINF:-1 tvg-id="Ocko.cz" tvg-name="Ocko" tvg-country="CZ" tvg-language="ces" group-title="musica" resolution="720x400" codec="h264",Ocko
+https://ocko-live-dash.ssl.cdn.cra.cz/cra_live2/ocko.stream.1.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="Ocko.cz" tvg-name="Ocko" tvg-country="CZ" tvg-language="ces" group-title="musica" resolution="720x400" codec="h264",Ocko
+https://ocko-live.ssl.cdn.cra.cz/channels/ocko/playlist.m3u8
+#EXTINF:-1 tvg-id="OckoExpres.cz" tvg-name="Ocko Expres" tvg-country="CZ" tvg-language="ces" group-title="musica" resolution="720x400" codec="h264",Ocko Expres
+https://ocko-live.ssl.cdn.cra.cz/channels/ocko_expres/playlist.m3u8
+#EXTINF:-1 tvg-id="OckoGold.cz" tvg-name="Ocko Gold" tvg-country="CZ" tvg-language="ces" group-title="musica" resolution="720x400" codec="h264",Ocko Gold
+https://ocko-live.ssl.cdn.cra.cz/channels/ocko_gold/playlist.m3u8
+#EXTINF:-1 tvg-id="RetroMusicTV.cz" tvg-name="Retro Music TV" tvg-country="CZ" tvg-language="ces" group-title="musica" resolution="854x480" codec="h264",Retro Music TV
+https://stream.mediawork.cz/retrotv/smil:retrotv2.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="DASDING908.de" tvg-name="DASDING 90.8" tvg-country="DE" tvg-language="deu" group-title="musica" resolution="640x360" codec="h264",DASDING 90.8
+https://swrdasdingvr-hls.akamaized.net/hls/live/2018681/dasdingvr/master.m3u8
+#EXTINF:-1 tvg-id="FuegoTV.do" tvg-name="Fuego TV" tvg-country="DO" tvg-language="spa" group-title="musica" resolution="720x480" codec="h264",Fuego TV
+https://streamunoapp.com:3553/live/cromtvlive.m3u8
+#EXTINF:-1 tvg-id="SiembraTV.do" tvg-name="Siembra TV" tvg-country="DO" tvg-language="spa" group-title="musica" resolution="720x360" codec="h264",Siembra TV
+https://streamunoapp.com:3809/live/siembratvlive.m3u8
+#EXTINF:-1 tvg-id="ElRadio9090FM.eg" tvg-name="El Radio 9090 FM" tvg-country="EG" tvg-language="ara" group-title="musica" resolution="854x480" codec="h264",El Radio 9090 FM
+https://9090video.mobtada.com/hls/stream.m3u8
+#EXTINF:-1 tvg-id="SolMusica.es" tvg-name="Sol Musica" tvg-country="ES" tvg-language="spa" group-title="musica" resolution="854x480" codec="h264",Sol Musica
+https://d2glyu450vvghm.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-21u4g5cjglv02/sm.m3u8
+#EXTINF:-1 tvg-id="TraceLatina.fr" tvg-name="Trace Latina" tvg-country="FR" tvg-language="fra" group-title="musica" resolution="848x480" codec="h264",Trace Latina
+https://amg01131-tracetv-tracelatina-glewed-vtnk7.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="TraceUrban.fr" tvg-name="Trace Urban" tvg-country="FR" tvg-language="fra;eng;por" group-title="musica" resolution="848x480" codec="h264",Trace Urban
+https://amg01131-tracetv-traceurban-glewed-g705j.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="TraceUrban.fr" tvg-name="Trace Urban" tvg-country="FR" tvg-language="fra;eng;por" group-title="musica" resolution="848x480" codec="h264",Trace Urban
+https://lightning-traceurban-samsungau.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="PlayTV.gr" tvg-name="Play TV" tvg-country="GR" tvg-language="ell" group-title="musica" resolution="854x480" codec="h264",Play TV
+http://web.onair-radio.eu:1935/Alpha-Host/Alpha-Host/playlist.m3u8
+#EXTINF:-1 tvg-id="MusicInformationChannel.id" tvg-name="Music Information Channel" tvg-country="ID" tvg-language="ind" group-title="musica" resolution="854x480" codec="h264",Music Information Channel
+https://mic.siar.us/mic/live/mic.m3u8
+#EXTINF:-1 tvg-id="7SMusic.in" tvg-name="7S Music" tvg-country="IN" tvg-language="tam" group-title="musica" resolution="654x360" codec="h264",7S Music
+https://mumbai-edge.smartplaytv.in/7SMusic/index.m3u8
+#EXTINF:-1 tvg-id="7SMusic.in" tvg-name="7S Music" tvg-country="IN" tvg-language="tam" group-title="musica" resolution="654x360" codec="h264",7S Music
+https://mumt03.tangotv.in/Dsly5z3H7SMUSIC/index.m3u8
+#EXTINF:-1 tvg-id="9XJalwa.in" tvg-name="9X Jalwa" tvg-country="IN" tvg-language="hin" group-title="musica" resolution="488x360" codec="h264",9X Jalwa
+https://mumt03.tangotv.in/Dsly5z3H9XJALWA/index.m3u8
+#EXTINF:-1 tvg-id="9XJalwa.in" tvg-name="9X Jalwa" tvg-country="IN" tvg-language="hin" group-title="musica" resolution="640x360" codec="h264",9X Jalwa
+https://wiselp.wiseplayout.com/9X_Jalwa/master.m3u8
+#EXTINF:-1 tvg-id="9XJhakaas.in" tvg-name="9X Jhakaas" tvg-country="IN" tvg-language="mar" group-title="musica" resolution="640x360" codec="h264",9X Jhakaas
+https://mumt03.tangotv.in/Dsly5z3H9XJHAKAAS/index.m3u8
+#EXTINF:-1 tvg-id="9XJhakaas.in" tvg-name="9X Jhakaas" tvg-country="IN" tvg-language="mar" group-title="musica" resolution="640x360" codec="h264",9X Jhakaas
+https://wiselp.wiseplayout.com/9X_Jhakaas/master.m3u8
+#EXTINF:-1 tvg-id="9XTashan.in" tvg-name="9X Tashan" tvg-country="IN" tvg-language="pan" group-title="musica" resolution="640x360" codec="h264",9X Tashan
+https://wiselp.wiseplayout.com/9X_Tashan/master.m3u8
+#EXTINF:-1 tvg-id="9XM.in" tvg-name="9XM" tvg-country="IN" tvg-language="hin" group-title="musica" resolution="640x360" codec="h264",9XM
+https://wiselp.wiseplayout.com/9XM/master.m3u8
+#EXTINF:-1 tvg-id="AndyHaryana.in" tvg-name="Andy Haryana" tvg-country="IN" tvg-language="hin" group-title="musica" resolution="488x360" codec="h264",Andy Haryana
+https://mumt03.tangotv.in/Dsly5z3HANDYHARYANA/index.m3u8
+#EXTINF:-1 tvg-id="B4UMusic.in" tvg-name="B4U Music" tvg-country="IN" tvg-language="hin" group-title="musica" resolution="848x480" codec="h264",B4U Music
+https://amg01408-amg01408c5-amgplt0747.playout.now3.amagi.tv/b4um001/playlist.m3u8
+#EXTINF:-1 tvg-id="B4UMusic.in" tvg-name="B4U Music" tvg-country="IN" tvg-language="hin" group-title="musica" resolution="488x360" codec="h264",B4U Music
+https://mumbai-edge.smartplaytv.in/B4uMusic/index.m3u8
+#EXTINF:-1 tvg-id="B4UMusic.in" tvg-name="B4U Music" tvg-country="IN" tvg-language="hin" group-title="musica" resolution="488x360" codec="h264",B4U Music
+https://streams.tangotv.in/B4UMUSIC/ORIGIN/index.m3u8
+#EXTINF:-1 tvg-id="BalleBalle.in" tvg-name="Balle Balle" tvg-country="IN" tvg-language="hin" group-title="musica" resolution="488x360" codec="h264",Balle Balle
+https://streams.tangotv.in/BALLEBALLE/ORIGIN/index.m3u8
+#EXTINF:-1 tvg-id="BoogleBollywood.in" tvg-name="Boogle Bollywood" tvg-country="IN" tvg-language="hin" group-title="musica" resolution="640x360" codec="h264",Boogle Bollywood
+https://yuppnimrestreammum.akamaized.net/181224/smil:bogglebollywood.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b
+#EXTINF:-1 tvg-id="DhoolTV.in" tvg-name="Dhool TV" tvg-country="IN" tvg-language="tam" group-title="musica" resolution="704x396" codec="h264",Dhool TV
+https://d1msejlow1t3l4.cloudfront.net/fta/subhartitv/playlist.m3u8
+#EXTINF:-1 tvg-id="DhoomMusic.in" tvg-name="Dhoom Music" tvg-country="IN" tvg-language="ben" group-title="musica" resolution="488x360" codec="h264",Dhoom Music
+https://mumt06.tangotv.in/qYyB8fXVDHOOMMUSIC/index.m3u8
+#EXTINF:-1 tvg-id="EpicMusic.in" tvg-name="Epic Music" tvg-country="IN" tvg-language="hin" group-title="musica" resolution="854x480" codec="h264",Epic Music
+https://cc-3cyxq80qusspd.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-3cyxq80qusspd/playlist.m3u8
+#EXTINF:-1 tvg-id="ETVMusic.in" tvg-name="ETV Music" tvg-country="IN" tvg-language="tel" group-title="musica" resolution="848x480" codec="h264",ETV Music
+https://cc-szivnms4rlah6.akamaized.net/WWBI/Amagi/ETV_Music_IN/playlist.m3u8
+#EXTINF:-1 tvg-id="Insync.in" tvg-name="Insync" tvg-country="IN" tvg-language="hin" group-title="musica" resolution="704x396" codec="h264",Insync
+https://d1msejlow1t3l4.cloudfront.net/fta/insync/playlist.m3u8
+#EXTINF:-1 tvg-id="Insync.in" tvg-name="Insync" tvg-country="IN" tvg-language="hin" group-title="musica" resolution="640x360" codec="h264",Insync
+https://mumt04.tangotv.in/m18aqlK4INSYNC/index.m3u8
+#EXTINF:-1 tvg-id="IsaiAruvi.in" tvg-name="Isai Aruvi" tvg-country="IN" tvg-language="tam" group-title="musica" resolution="704x396" codec="h264",Isai Aruvi
+https://segment.yuppcdn.net/140622/isaiaruvi/playlist.m3u8
+#EXTINF:-1 tvg-id="KalikaTV.in" tvg-name="Kalika TV" tvg-country="IN" tvg-language="mal" group-title="musica" resolution="720x576" codec="h264",Kalika TV
+http://server.applelive.in/kalikatv/kalikatv.m3u8
+#EXTINF:-1 tvg-id="PeppersTV.in" tvg-name="Peppers TV" tvg-country="IN" tvg-language="tam" group-title="musica" resolution="488x360" codec="h264",Peppers TV
+https://mumt07.tangotv.in/zHjX9OFlPEPPERS/index.m3u8
+#EXTINF:-1 tvg-id="PTCChakde.in" tvg-name="PTC Chakde" tvg-country="IN" tvg-language="pan" group-title="musica" resolution="488x360" codec="h264",PTC Chakde
+https://mumt06.tangotv.in/qYyB8fXVPTCCHAKDE/index.m3u8
+#EXTINF:-1 tvg-id="PTCMusic.in" tvg-name="PTC Music" tvg-country="IN" tvg-language="pan" group-title="musica" resolution="640x360" codec="h264",PTC Music
+https://d2lk5u59tns74c.cloudfront.net/out/v1/f913cf893c594f73b114216e74a2efbc/index.m3u8
+#EXTINF:-1 tvg-id="PTCMusic.in" tvg-name="PTC Music" tvg-country="IN" tvg-language="pan" group-title="musica" resolution="488x360" codec="h264",PTC Music
+https://mumt04.tangotv.in/m18aqlK4PTCMUSIC/index.m3u8
+#EXTINF:-1 tvg-id="PublicMusic.in" tvg-name="Public Music" tvg-country="IN" tvg-language="kan" group-title="musica" resolution="488x360" codec="h264",Public Music
+https://mumt04.tangotv.in/m18aqlK4PUBLICMUSIC/index.m3u8
+#EXTINF:-1 tvg-id="PunjabiHits.in" tvg-name="Punjabi Hits" tvg-country="IN" tvg-language="pan" group-title="musica" resolution="640x360" codec="h264",Punjabi Hits
+https://stream.ottlive.co.in/punjabihits/index.m3u8
+#EXTINF:-1 tvg-id="RajMusixKannada.in" tvg-name="Raj Musix Kannada" tvg-country="IN" tvg-language="kan" group-title="musica" resolution="488x360" codec="h264",Raj Musix Kannada
+https://mumt01.tangotv.in/O5aw8Zn3RAJMUSIXKANDA/index.m3u8
+#EXTINF:-1 tvg-id="RajMusixMalayalam.in" tvg-name="Raj Musix Malayalam" tvg-country="IN" tvg-language="mal" group-title="musica" resolution="488x360" codec="h264",Raj Musix Malayalam
+https://mumt04.tangotv.in/m18aqlK4RAJMUSIXMALAYALAM/index.m3u8
+#EXTINF:-1 tvg-id="RajMusixTamil.in" tvg-name="Raj Musix Tamil" tvg-country="IN" tvg-language="tam" group-title="musica" resolution="854x480" codec="h264",Raj Musix Tamil
+https://livestream.rajtv.tv/hlslive/Admin/px08241087/live/Raj_Musix/master_1.m3u8
+#EXTINF:-1 tvg-id="RajMusixTelugu.in" tvg-name="Raj Musix Telugu" tvg-country="IN" tvg-language="tel" group-title="musica" resolution="488x360" codec="h264",Raj Musix Telugu
+https://mumt07.tangotv.in/zHjX9OFlRAJMUSIXTELUGU/index.m3u8
+#EXTINF:-1 tvg-id="SangeetBangla.in" tvg-name="Sangeet Bangla" tvg-country="IN" tvg-language="ben" group-title="musica" resolution="488x360" codec="h264",Sangeet Bangla
+https://mumt05.tangotv.in/87NeALx2SANGEETBANGLA/index.m3u8
+#EXTINF:-1 tvg-id="SangeetBhojpuri.in" tvg-name="Sangeet Bhojpuri" tvg-country="IN" tvg-language="bho" group-title="musica" resolution="488x360" codec="h264",Sangeet Bhojpuri
+https://mumt01.tangotv.in/O5aw8Zn3SANGEETBHOJPURI/index.m3u8
+#EXTINF:-1 tvg-id="SangeetMarathi.in" tvg-name="Sangeet Marathi" tvg-country="IN" tvg-language="mar" group-title="musica" resolution="488x360" codec="h264",Sangeet Marathi
+https://mumt07.tangotv.in/zHjX9OFlSANGEETMARATHI/index.m3u8
+#EXTINF:-1 tvg-id="SongdewTV.in" tvg-name="Songdew TV" tvg-country="IN" tvg-language="hin" group-title="musica" resolution="640x360" codec="h264",Songdew TV
+https://yuppnimrestreammum.akamaized.net/181224/smil:songdewtv.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b
+#EXTINF:-1 tvg-id="TabbarHits.in" tvg-name="Tabbar Hits" tvg-country="IN" tvg-language="pan" group-title="musica" resolution="488x360" codec="h264",Tabbar Hits
+https://mumt04.tangotv.in/m18aqlK4TABBARHITS/index.m3u8
+#EXTINF:-1 tvg-id="TabbarHits.in" tvg-name="Tabbar Hits" tvg-country="IN" tvg-language="pan" group-title="musica" resolution="640x360" codec="h264",Tabbar Hits
+https://vglivessai.akamaized.net/sg/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/e11b0319-52e8-4190-ab03-3931cc68eac9/index.m3u8
+#EXTINF:-1 tvg-id="TarangMusic.in" tvg-name="Tarang Music" tvg-country="IN" tvg-language="ori" group-title="musica" resolution="640x360" codec="h264",Tarang Music
+https://livetv.tarangplus.in/tarangmusic-origin/live/playlist.m3u8
+#EXTINF:-1 tvg-id="VaanavilTV.in" tvg-name="Vaanavil TV" tvg-country="IN" tvg-language="tam" group-title="musica" resolution="488x360" codec="h264",Vaanavil TV
+https://mumt01.tangotv.in/O5aw8Zn3VAANAVILTV/index.m3u8
+#EXTINF:-1 tvg-id="Zoom.in" tvg-name="Zoom" tvg-country="IN" tvg-language="hin" group-title="musica" resolution="854x480" codec="h264",Zoom
+https://d2esfk1pb9cdob.cloudfront.net/master.m3u8
+#EXTINF:-1 tvg-id="Zoom.in" tvg-name="Zoom" tvg-country="IN" tvg-language="hin" group-title="musica" resolution="854x480" codec="h264",Zoom
+https://dai.google.com/linear/hls/event/JCAm25qkRXiKcK1AJMlvKQ/master.m3u8
+#EXTINF:-1 tvg-id="CompanyTV.it" tvg-name="Company TV" tvg-country="IT" tvg-language="ita" group-title="musica" resolution="640x360" codec="h264",Company TV
+https://5929b138b139d.streamlock.net/CompanyTV/smil:CompanyTV.smil/master.m3u8
+#EXTINF:-1 tvg-id="KissKissTV.it" tvg-name="Kiss Kiss TV" tvg-country="IT" tvg-language="ita" group-title="musica" resolution="640x360" codec="h264",Kiss Kiss TV
+https://59253971be783.streamlock.net/KissKissTV/KissKissTV.stream/playlist.m3u8
+#EXTINF:-1 tvg-id="m2oTV.it" tvg-name="m2o TV" tvg-country="IT" tvg-language="ita" group-title="musica" resolution="854x480" codec="h264",m2o TV
+https://4c4b867c89244861ac216426883d1ad0.msvdn.net/live/S62628868/uhdWBlkC1AoO/playlist.m3u8
+#EXTINF:-1 tvg-id="RadioZeta.it" tvg-name="Radio Zeta" tvg-country="IT" tvg-language="ita" group-title="musica" resolution="854x480" codec="h264",Radio Zeta
+https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S9346184/XEx1LqlYbNic/playlist_video.m3u8
+#EXTINF:-1 tvg-id="RadioZeta.it" tvg-name="Radio Zeta" tvg-country="IT" tvg-language="ita" group-title="musica" resolution="854x480" codec="h264",Radio Zeta
+https://streamcdnb1-dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S9346184/XEx1LqlYbNic/playlist_video.m3u8
+#EXTINF:-1 tvg-id="Radiofreccia.it" tvg-name="Radiofreccia" tvg-country="IT" tvg-language="ita" group-title="musica" resolution="854x480" codec="h264",Radiofreccia
+https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S3160845/0tuSetc8UFkF/playlist_video.m3u8
+#EXTINF:-1 tvg-id="Radiofreccia.it" tvg-name="Radiofreccia" tvg-country="IT" tvg-language="ita" group-title="musica" resolution="854x480" codec="h264",Radiofreccia
+https://streamcdnb1-dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S3160845/0tuSetc8UFkF/playlist_video.m3u8
+#EXTINF:-1 tvg-id="RTL1025Best.it" tvg-name="RTL 102.5 Best" tvg-country="IT" tvg-language="ita" group-title="musica" resolution="854x480" codec="h264",RTL 102.5 Best
+https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S76960628/OEPHRUIctA0M/playlist_video.m3u8
+#EXTINF:-1 tvg-id="RTL1025BroSis.it" tvg-name="RTL 102.5 Bro&Sis" tvg-country="IT" tvg-language="ita" group-title="musica" resolution="854x480" codec="h264",RTL 102.5 Bro&Sis
+https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S75007890/MUGHuxc9dQ3b/playlist_video.m3u8
+#EXTINF:-1 tvg-id="RTL1025Caliente.it" tvg-name="RTL 102.5 Caliente" tvg-country="IT" tvg-language="ita" group-title="musica" resolution="854x480" codec="h264",RTL 102.5 Caliente
+https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S8448465/zTYa1Z5Op9ue/playlist_video.m3u8
+#EXTINF:-1 tvg-id="RTL1025Disco.it" tvg-name="RTL 102.5 Disco" tvg-country="IT" tvg-language="ita" group-title="musica" resolution="854x480" codec="h264",RTL 102.5 Disco
+https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S51100361/0Fb4R3k82b5Z/playlist_video.m3u8
+#EXTINF:-1 tvg-id="RTL1025Napule.it" tvg-name="RTL 102.5 Napule" tvg-country="IT" tvg-language="ita" group-title="musica" resolution="854x480" codec="h264",RTL 102.5 Napule
+https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S27134503/0f9AhuwKlhnZ/playlist_video.m3u8
+#EXTINF:-1 tvg-id="RTL1025Traffic.it" tvg-name="RTL 102.5 Traffic" tvg-country="IT" tvg-language="ita" group-title="musica" resolution="854x480" codec="h264",RTL 102.5 Traffic
+https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S38122967/2lyQRIAAGgRR/playlist_video.m3u8
+#EXTINF:-1 tvg-id="RTL1025TV.it" tvg-name="RTL 102.5 TV" tvg-country="IT" tvg-language="ita" group-title="musica" resolution="854x480" codec="h264",RTL 102.5 TV
+https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S97044836/tbbP8T1ZRPBL/playlist_video.m3u8
+#EXTINF:-1 tvg-id="JordanSongs.jo" tvg-name="Jordan Songs" tvg-country="JO" tvg-language="ara" group-title="musica" resolution="854x480" codec="h264",Jordan Songs
+https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/Song/playlist.m3u8
+#EXTINF:-1 tvg-id="mfm.lb" tvg-name="mfm" tvg-country="LB" tvg-language="ara" group-title="musica" resolution="852x480" codec="h264",mfm
+https://hms.pfs.gdn/hms/v1/broadcast/hlmvmp2hfriode891/playlist.m3u8
+#EXTINF:-1 tvg-id="OneTV.lb" tvg-name="One TV" tvg-country="LB" tvg-language="ara" group-title="musica" resolution="852x480" codec="h264",One TV
+https://hms.pfs.gdn/v1/broadcast/one/playlist.m3u8
+#EXTINF:-1 tvg-id="M1.lt" tvg-name="M-1" tvg-country="LT" tvg-language="lit" group-title="musica" resolution="854x480" codec="h264",M-1
+https://m-1.data.lt/m-1/smil:m-1.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="RTLGold.lu" tvg-name="RTL Gold" tvg-country="LU" tvg-language="ltz" group-title="musica" resolution="854x480" codec="h264",RTL Gold
+https://stream.rtl.lu/data/live/tele/rtlgold/playlist.m3u8
+#EXTINF:-1 tvg-id="TodayRadio.lu" tvg-name="Today Radio" tvg-country="LU" tvg-language="eng" group-title="musica" resolution="854x480" codec="h264",Today Radio
+https://stream.rtl.lu/data/live/tele/rtltodayradio/playlist.m3u8
+#EXTINF:-1 tvg-id="HitFM.md" tvg-name="Hit FM" tvg-country="MD" tvg-language="ron;rus" group-title="musica" resolution="640x360" codec="h264",Hit FM
+https://hitfm.nfthost.net/hls/hitfm/live_all/playlist.m3u8
+#EXTINF:-1 tvg-id="TezaurTV.md" tvg-name="Tezaur TV" tvg-country="MD" tvg-language="ron" group-title="musica" resolution="640x360" codec="h264",Tezaur TV
+https://tezaurtv.md/stream/index.m3u8
+#EXTINF:-1 tvg-id="VisionTelevision.mx" tvg-name="Vision Television" tvg-country="MX" tvg-language="spa" group-title="musica" resolution="640x360" codec="h264",Vision Television
+https://cloudvideo.servers10.com:8081/8016/index.m3u8
+#EXTINF:-1 tvg-id="AMusicChannel.ng" tvg-name="AMusic Channel" tvg-country="NG" tvg-language="eng" group-title="musica" resolution="854x480" codec="h264",AMusic Channel
+https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_021/Stream/playlist.m3u8
+#EXTINF:-1 tvg-id="XITE.nl" tvg-name="XITE" tvg-country="NL" tvg-language="nld" group-title="musica" resolution="848x480" codec="h264",XITE
+https://xite-rakuten.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="XITEHits.nl" tvg-name="XITE Hits" tvg-country="NL" tvg-language="eng;nld" group-title="musica" resolution="848x480" codec="h264",XITE Hits
+https://d726x48n2pd5h.cloudfront.net/XITE_Hits.m3u8
+#EXTINF:-1 tvg-id="XITEHits.nl" tvg-name="XITE Hits" tvg-country="NL" tvg-language="eng;deu" group-title="musica" resolution="848x480" codec="h264",XITE Hits
+https://d726x48n2pd5h.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-skxr1pazhltvp/XITE_Hits.m3u8
+#EXTINF:-1 tvg-id="XITEJustChill.nl" tvg-name="XITE Just Chill" tvg-country="NL" tvg-language="eng" group-title="musica" resolution="848x480" codec="h264",XITE Just Chill
+https://dvnftgdlbnemm.cloudfront.net/XITE_Just_Chill.m3u8
+#EXTINF:-1 tvg-id="XITERockxMetal.nl" tvg-name="XITE Rock x Metal" tvg-country="NL" tvg-language="eng" group-title="musica" resolution="848x480" codec="h264",XITE Rock x Metal
+https://d198ro05q94rc4.cloudfront.net/XITE_Rock_On.m3u8
+#EXTINF:-1 tvg-id="Mas23TV.pa" tvg-name="Mas23 TV" tvg-country="PA" tvg-language="spa" group-title="musica" resolution="720x480" codec="h264",Mas23 TV
+https://movil.ejeserver.com/live/mas23tv.m3u8
+#EXTINF:-1 tvg-id="MetropolitanadelCuzco.pe" tvg-name="Metropolitana del Cuzco" tvg-country="PE" tvg-language="spa" group-title="musica" resolution="640x480" codec="h264",Metropolitana del Cuzco
+https://video1.earthcam.com/myearthcam/075ff02f78c35af55564cf3af3b3f750.flv/playlist.m3u8
+#EXTINF:-1 tvg-id="8XM.pk" tvg-name="8XM" tvg-country="PK" tvg-language="urd" group-title="musica" resolution="720x360" codec="h264",8XM
+https://cdn4.mjunoon.tv:8087/streamtest/131M/chunks.m3u8
+#EXTINF:-1 tvg-id="JalwaTV.pk" tvg-name="Jalwa TV" tvg-country="PK" tvg-language="eng" group-title="musica" resolution="720x360" codec="h264",Jalwa TV
+https://vodzong.mjunoon.tv:8087/streamtest/JalwaTV-135/live/135M/chunks.m3u8
+#EXTINF:-1 tvg-id="KuriakosMusic.pt" tvg-name="Kuriakos Music" tvg-country="PT" tvg-language="por" group-title="musica" resolution="640x360" codec="h264",Kuriakos Music
+http://195.23.211.179:1935/kmusic/smil:kmusic.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="AtomicAcademyTV.ro" tvg-name="Atomic Academy TV" tvg-country="RO" tvg-language="ron" group-title="musica" resolution="720x360" codec="h264",Atomic Academy TV
+https://atomic.streamnet.ro/academia.m3u8
+#EXTINF:-1 tvg-id="AtomicTV.ro" tvg-name="Atomic TV" tvg-country="RO" tvg-language="ron;eng" group-title="musica" resolution="720x360" codec="h264",Atomic TV
+https://atomic.streamnet.ro/atomictv.m3u8
+#EXTINF:-1 tvg-id="MoozDance.ro" tvg-name="Mooz Dance" tvg-country="RO" tvg-language="ron" group-title="musica" resolution="720x576" codec="h264",Mooz Dance
+https://tvextra-hls.b-cdn.net/moozdance/moozdance.m3u8
+#EXTINF:-1 tvg-id="MoozHits.ro" tvg-name="Mooz Hits" tvg-country="RO" tvg-language="ron" group-title="musica" resolution="720x576" codec="h264",Mooz Hits
+https://tvextra-hls.b-cdn.net/moozhits/moozhits.m3u8
+#EXTINF:-1 tvg-id="MoozLove.ro" tvg-name="Mooz Love" tvg-country="RO" tvg-language="ron;eng" group-title="musica" resolution="720x576" codec="h264",Mooz Love
+https://tvextra-hls.b-cdn.net/moozlove/moozlove.m3u8
+#EXTINF:-1 tvg-id="MoozRetro.ro" tvg-name="Mooz Retro" tvg-country="RO" tvg-language="eng;ron" group-title="musica" resolution="720x576" codec="h264",Mooz Retro
+https://tvextra-hls.b-cdn.net/moozretro/moozretro.m3u8
+#EXTINF:-1 tvg-id="MoozRo.ro" tvg-name="Mooz Ro!" tvg-country="RO" tvg-language="ron" group-title="musica" resolution="720x576" codec="h264",Mooz Ro!
+https://tvextra-hls.b-cdn.net/moozro/moozro.m3u8
+#EXTINF:-1 tvg-id="RadioFxNet.ro" tvg-name="Radio Fx Net" tvg-country="RO" tvg-language="ron;eng" group-title="musica" resolution="852x480" codec="h264",Radio Fx Net
+https://streamlov.alsolnet.com/radiofxnet/live/playlist.m3u8
+#EXTINF:-1 tvg-id="TVRFolclor.ro" tvg-name="TVR Folclor" tvg-country="RO" tvg-language="ron" group-title="musica" resolution="854x480" codec="h264",TVR Folclor
+https://tvr-folclor.lg.mncdn.com/tvrfolclor/smil:tvrfolclor.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="BabyTime.ru" tvg-name="Baby Time" tvg-country="RU" tvg-language="rus" group-title="musica" resolution="720x576" codec="h264",Baby Time
+https://fs.uplink.kz/baby_time/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="BRIDGEClassic.ru" tvg-name="BRIDGE Classic" tvg-country="RU" tvg-language="rus" group-title="musica" resolution="720x576" codec="h264",BRIDGE Classic
+https://fs.uplink.kz/bridge_classic/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="DanceHits80.ru" tvg-name="DanceHits80" tvg-country="RU" tvg-language="eng;rus" group-title="musica" resolution="720x432" codec="h264",DanceHits80
+http://dancehits80.denvs.ru:8080/index.m3u8
+#EXTINF:-1 tvg-id="EuropaPlusTV.ru" tvg-name="Europa Plus TV" tvg-country="RU" tvg-language="rus" group-title="musica" resolution="720x576" codec="h264",Europa Plus TV
+https://fs.uplink.kz/europa_plus/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="Maidan.ru" tvg-name="Maidan" tvg-country="RU" tvg-language="rus" group-title="musica" resolution="854x480" codec="h264",Maidan
+https://live-maidantv.cdnvideo.ru/maidantv/maidantv.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="MuzTV.ru" tvg-name="Muz-TV" tvg-country="RU" tvg-language="rus" group-title="musica" resolution="720x576" codec="h264",Muz-TV
+https://fs.uplink.kz/muz_tv/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="MuzTV.ru" tvg-name="Muz-TV" tvg-country="RU" tvg-language="rus" group-title="musica" resolution="720x576" codec="h264",Muz-TV
+https://stream8.cinerama.uz/1200/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="MuzTV.ru" tvg-name="Muz-TV" tvg-country="RU" tvg-language="rus" group-title="musica" resolution="640x360" codec="h264",Muz-TV
+https://streaming.televizor-24-tochka.ru/live/618.m3u8
+#EXTINF:-1 tvg-id="Muzyka1.ru" tvg-name="Muzyka 1" tvg-country="RU" tvg-language="rus" group-title="musica" resolution="720x432" codec="h264",Muzyka 1
+https://kino-1.catcast.tv/content/37742/index.m3u8
+#EXTINF:-1 tvg-id="Muzyka1.ru" tvg-name="Muzyka 1" tvg-country="RU" tvg-language="rus" group-title="musica" resolution="720x432" codec="h264",Muzyka 1
+https://kino-1.catcast.tv/content/37745/index.m3u8
+#EXTINF:-1 tvg-id="MuzykaKino.ru" tvg-name="Muzyka Kino" tvg-country="RU" tvg-language="rus" group-title="musica" resolution="720x432" codec="h264",Muzyka Kino
+https://kino-1.catcast.tv/content/37739/index.m3u8
+#EXTINF:-1 tvg-id="MuzykaLive.ru" tvg-name="Muzyka Live" tvg-country="RU" tvg-language="rus" group-title="musica" resolution="720x576" codec="h264",Muzyka Live
+http://stream.mcquack.net/303/index.m3u8
+#EXTINF:-1 tvg-id="MuzykaPervogo.ru" tvg-name="Muzyka Pervogo" tvg-country="RU" tvg-language="rus;ukr" group-title="musica" resolution="720x576" codec="h264",Muzyka Pervogo
+https://stream8.cinerama.uz/1201/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="RadioShanson.ru" tvg-name="Radio Shanson" tvg-country="RU" tvg-language="rus" group-title="musica" resolution="854x480" codec="h264",Radio Shanson
+http://chanson-video.hostingradio.ru:8080/hls/chansonabr/live.m3u8
+#EXTINF:-1 tvg-id="RUTV.ru" tvg-name="RU.TV" tvg-country="RU" tvg-language="rus" group-title="musica" resolution="640x360" codec="h264",RU.TV
+https://bl.rutube.ru/livestream/b1eb8e90d7e636677b3eb73b4fcbb717/index.m3u8?e=2069285076&s=d-E-bxKy2v3EEJ94RQX9CA&scheme=https
+#EXTINF:-1 tvg-id="ShansonTV.ru" tvg-name="Shanson TV" tvg-country="RU" tvg-language="rus" group-title="musica" resolution="720x404" codec="h264",Shanson TV
+http://hls.shansontv.cdnvideo.ru/shansontv/shansontv.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="ShansonTV.ru" tvg-name="Shanson TV" tvg-country="RU" tvg-language="rus" group-title="musica" resolution="720x576" codec="h264",Shanson TV
+https://fs.uplink.kz/shanson/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="ShansonTV.ru" tvg-name="Shanson TV" tvg-country="RU" tvg-language="rus" group-title="musica" resolution="640x512" codec="h264",Shanson TV
+https://hls-shansontv.cdnvideo.ru/shansontv/smil:shansontv.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="ShansonTV.ru" tvg-name="Shanson TV" tvg-country="RU" tvg-language="rus" group-title="musica" resolution="640x360" codec="h264",Shanson TV
+https://streaming.thestream.cyou/live/7009.m3u8
+#EXTINF:-1 tvg-id="StranaFM.ru" tvg-name="Strana FM" tvg-country="RU" tvg-language="rus" group-title="musica" resolution="640x360" codec="h264",Strana FM
+https://live-stranafm.cdnvideo.ru/stranafm/smil:stranafm.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="IsangoTV.rw" tvg-name="Isango TV" tvg-country="RW" tvg-language="kin" group-title="musica" resolution="854x480" codec="h264",Isango TV
+http://80.241.215.175:1935/isangostar/isangostar/playlist.m3u8
+#EXTINF:-1 tvg-id="Fairuz.sa" tvg-name="Fairuz" tvg-country="SA" tvg-language="ara" group-title="musica" resolution="832x468" codec="h264",Fairuz
+https://shd-amg-fast.edgenextcdn.net/tx029/playlist.m3u8
+#EXTINF:-1 tvg-id="MajidAlMohandis.sa" tvg-name="Majid Al Mohandis" tvg-country="SA" tvg-language="ara" group-title="musica" resolution="832x468" codec="h264",Majid Al Mohandis
+https://shd-amg-fast.edgenextcdn.net/tx019/playlist.m3u8
+#EXTINF:-1 tvg-id="PanoramaFM.sa" tvg-name="Panorama FM" tvg-country="SA" tvg-language="ara" group-title="musica" resolution="832x468" codec="h264",Panorama FM
+https://d6izdil55uftn.cloudfront.net/out/v1/0a06d1d6377c47edbd48721ed724bd08/index.m3u8
+#EXTINF:-1 tvg-id="RabehSaqer.sa" tvg-name="Rabeh Saqer" tvg-country="SA" tvg-language="ara" group-title="musica" resolution="832x468" codec="h264",Rabeh Saqer
+https://shd-amg-fast.edgenextcdn.net/tx004/playlist.m3u8
+#EXTINF:-1 tvg-id="RotanaKhalijia.sa" tvg-name="Rotana Khalijia" tvg-country="SA" tvg-language="ara" group-title="musica" resolution="854x480" codec="h264",Rotana Khalijia
+https://rotana.hibridcdn.net/rotananet/khaleejiya_net-7Y83PP5adWixDF93/playlist.m3u8
+#EXTINF:-1 tvg-id="RotanaMusic.sa" tvg-name="Rotana Music" tvg-country="SA" tvg-language="ara" group-title="musica" resolution="854x480" codec="h264",Rotana Music
+https://rotana.hibridcdn.net/rotananet/music_net-7Y83PP5adWixDF93/playlist.m3u8
+#EXTINF:-1 tvg-id="Tarab.sa" tvg-name="Tarab" tvg-country="SA" tvg-language="ara" group-title="musica" resolution="832x468" codec="h264",Tarab
+https://shd-amg-fast.edgenextcdn.net/tx002/playlist.m3u8
+#EXTINF:-1 tvg-id="TRTMuzik.tr" tvg-name="TRT Muzik" tvg-country="TR" tvg-language="tur" group-title="musica" resolution="854x480" codec="h264",TRT Muzik
+https://tv-trtmuzik.medya.trt.com.tr/master.m3u8
+#EXTINF:-1 tvg-id="Muzvar.ua" tvg-name="Muzvar" tvg-country="UA" tvg-language="ukr" group-title="musica" resolution="848x480" codec="h264",Muzvar
+https://cdn15.live-tv.cloud/ua_infinitas_tv/muzvar-abr/playlist.m3u8
+#EXTINF:-1 tvg-id="NASHEMusic.ua" tvg-name="NASHE Music" tvg-country="UA" tvg-language="ukr" group-title="musica" resolution="848x480" codec="h264",NASHE Music
+https://cdn15.live-tv.cloud/ua_infinitas_tv/nashemus-abr/playlist.m3u8
+#EXTINF:-1 tvg-id="AfrobeatTVEntertainment.uk" tvg-name="Afrobeat TV Entertainment" tvg-country="UK" tvg-language="eng" group-title="musica" resolution="852x480" codec="h264",Afrobeat TV Entertainment
+https://stream.ecable.tv/afrobeats/index.m3u8
+#EXTINF:-1 tvg-id="Now70s.uk" tvg-name="Now 70s" tvg-country="UK" tvg-language="eng" group-title="musica" resolution="848x480" codec="h264",Now 70s
+https://lightning-now70s-rakuten.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="Now70s.uk" tvg-name="Now 70s" tvg-country="UK" tvg-language="eng" group-title="musica" resolution="848x480" codec="h264",Now 70s
+https://lightning-now70s-samsungnz.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="Now80s.uk" tvg-name="Now 80s" tvg-country="UK" tvg-language="eng" group-title="musica" resolution="848x480" codec="h264",Now 80s
+https://lightning-now80s-rakuten.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="Now80s.uk" tvg-name="Now 80s" tvg-country="UK" tvg-language="eng" group-title="musica" resolution="848x480" codec="h264",Now 80s
+https://lightning-now80s-samsungnz.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="Now80s.uk" tvg-name="Now 80s" tvg-country="UK" tvg-language="eng" group-title="musica" resolution="848x480" codec="h264",Now 80s
+https://lightning-now80s-samsungse.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="NOWRock.uk" tvg-name="NOW Rock" tvg-country="UK" tvg-language="eng" group-title="musica" resolution="848x480" codec="h264",NOW Rock
+https://lightning-now90s-rakuten.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="NOWRock.uk" tvg-name="NOW Rock" tvg-country="UK" tvg-language="eng" group-title="musica" resolution="848x480" codec="h264",NOW Rock
+https://lightning-now90s-samsungnz.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="NOWRock.uk" tvg-name="NOW Rock" tvg-country="UK" tvg-language="eng" group-title="musica" resolution="848x480" codec="h264",NOW Rock
+https://lightning-now90s-samsungse.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="TraceUK.uk" tvg-name="Trace UK" tvg-country="UK" tvg-language="eng" group-title="musica" resolution="848x480" codec="h264",Trace UK
+https://d2l4tng0wskzvn.cloudfront.net/Trace_GB.m3u8
+#EXTINF:-1 tvg-id="3ABNPraiseHimMusicNetwork.us" tvg-name="3ABN Praise Him Music Network" tvg-country="US" tvg-language="eng" group-title="musica" resolution="640x360" codec="h264",3ABN Praise Him Music Network
+https://3abn.bozztv.com/3abn1/PraiseHim/smil:PraiseHim.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="ACECountryRadio.us" tvg-name="ACE Country Radio" tvg-country="US" tvg-language="eng" group-title="musica" resolution="720x480" codec="h264",ACE Country Radio
+https://2-fss-1.streamhoster.com/pl_122/206858-4412960-1/playlist.m3u8
+#EXTINF:-1 tvg-id="AXSTV.us" tvg-name="AXS TV" tvg-country="US" tvg-language="eng" group-title="musica" resolution="768x432" codec="h264",AXS TV
+https://tvsen3.aynaott.com/P2fJzfsg/index.m3u8
+#EXTINF:-1 tvg-id="CaliforniaMusicChannel.us" tvg-name="California Music Channel" tvg-country="US" tvg-language="eng" group-title="musica" resolution="640x360" codec="h264",California Music Channel
+https://cmc-cmctv-cineverse.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="CaliforniaMusicChannel.us" tvg-name="California Music Channel" tvg-country="US" tvg-language="eng" group-title="musica" resolution="640x360" codec="h264",California Music Channel
+https://cmc-kowdtv.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="ConcertChannel.us" tvg-name="Concert Channel" tvg-country="US" tvg-language="eng;spa" group-title="musica" resolution="720x480" codec="h264",Concert Channel
+http://45.167.1.138:8000/play/a04i
+#EXTINF:-1 tvg-id="LIVExLIVE.us" tvg-name="LIVExLIVE" tvg-country="US" tvg-language="eng" group-title="musica" resolution="640x360" codec="h264",LIVExLIVE
+https://livestream.liveone.com/lc1/p1.m3u8
+#EXTINF:-1 tvg-id="MetaleitorTV.us" tvg-name="Metaleitor TV" tvg-country="US" tvg-language="spa" group-title="musica" resolution="720x360" codec="h264",Metaleitor TV
+https://vs20.live.opencaster.com/metaleitortv_423d3342/index.m3u8
+#EXTINF:-1 tvg-id="SpiritTV.us" tvg-name="Spirit TV" tvg-country="US" tvg-language="eng" group-title="musica" resolution="852x480" codec="h264",Spirit TV
+https://cdnlive.myspirit.tv/LS-ATL-43240-2/index.m3u8
+#EXTINF:-1 tvg-id="TVSMusicNetwork.us" tvg-name="TVS Music Network" tvg-country="US" tvg-language="eng" group-title="musica" resolution="640x480" codec="h264",TVS Music Network
+https://rpn.bozztv.com/gusa/gusa-tvsmusic/index.m3u8
+#EXTINF:-1 tvg-id="VevoLatino.us" tvg-name="Vevo Latino" tvg-country="US" tvg-language="eng" group-title="musica" resolution="640x360" codec="h264",Vevo Latino
+https://amg00056-amg00056c13-rakuten-es-3246.playouts.now.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="VevoPop.us" tvg-name="Vevo Pop" tvg-country="US" tvg-language="eng" group-title="musica" resolution="848x480" codec="h264",Vevo Pop
+https://amg00056-amg00056c6-rakuten-uk-3235.playouts.now.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="XITE90sThrowback.us" tvg-name="XITE 90's Throwback" tvg-country="US" tvg-language="eng" group-title="musica" resolution="848x480" codec="h264",XITE 90's Throwback
+https://d284aawtm5vi48.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-fjdfi2br1jtq7/XITE_90s_Throwback.m3u8
+#EXTINF:-1 tvg-id="XITENuevoLatino.us" tvg-name="XITE Nuevo Latino" tvg-country="US" tvg-language="spa;por" group-title="musica" resolution="848x480" codec="h264",XITE Nuevo Latino
+https://d3bsgqzbpkrvbb.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-w288eaw03izg1/XITE_Nuevo_Latino.m3u8
+#EXTINF:-1 tvg-id="XITESiempreLatino.us" tvg-name="XITE Siempre Latino" tvg-country="US" tvg-language="spa;por" group-title="musica" resolution="848x480" codec="h264",XITE Siempre Latino
+https://d1xc25jm9e0l4b.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-xplkt8i7m24dc/XITE_Siempre_Latino.m3u8
+#EXTINF:-1 tvg-id="BTATV.ve" tvg-name="BTA TV" tvg-country="VE" tvg-language="spa" group-title="musica" resolution="720x480" codec="h264",BTA TV
+https://cloud.fastchannel.es/manifiest/hls/prog9/btatv.m3u8
+#EXTINF:-1 tvg-id="TraVinhTV.vn" tvg-name="Tra Vinh TV" tvg-country="VN" tvg-language="vie" group-title="musica" resolution="854x480" codec="h264",Tra Vinh TV
+https://freem3u.xyz/api/live/play.m3u8?vid=91

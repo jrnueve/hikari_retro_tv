@@ -1,8 +1,14 @@
-# Hikari TV
+# Hikari Retro TV
 
-Reproductor de IPTV minimalista para Raspberry Pi Zero W que inyecta señal
-analógica (video compuesto + audio) a un modulador de RF, para sintonizar
-canales IPTV en un televisor antiguo por su entrada de antena (RF).
+Televisor IPTV para televisores retro de tubo: una Raspberry Pi Zero W que
+entrega señal analógica (video compuesto + audio) al TV, directo o por un
+modulador de RF a su entrada de antena. Los canales y categorías se eligen
+desde una web app en el celular; el volumen es la perilla del propio TV.
+
+La primera versión apunta a televisores **blanco y negro** (solo luma, sin
+subportadora de color); podría haber versiones futuras en color. Es la
+hermana de Hikari TV sobre la netbook MSI Wind U100, de la que hereda el
+catálogo de canales y la web app.
 
 ## Filosofía del proyecto
 
@@ -21,8 +27,10 @@ canales IPTV en un televisor antiguo por su entrada de antena (RF).
 ## Arquitectura (resumen)
 
 ```
-IPTV stream (HLS/m3u8) --> mpv/vlc (CLI, sin GUI) --> framebuffer (/dev/fb0) --> TV Out (compuesto) --> Modulador RF --> TV antiguo (entrada antena)
-                                              \--> ALSA PWM (GPIO 18) --> filtro RC --> entrada de audio del modulador RF
+IPTV (HLS) --> ffmpeg (h264_v4l2m2m, solo luma) --> fbgray --> framebuffer (/dev/fb0) --> TV Out (compuesto) --> TV blanco y negro
+                            \--> ALSA PWM (GPIO 19) --> filtro RC --> entrada de audio
+
+celular --> web app :8080 --> hikaritvd (supervisa el pipeline, catalogo, favoritos)
 ```
 
 ## Estructura del repositorio
@@ -31,6 +39,9 @@ IPTV stream (HLS/m3u8) --> mpv/vlc (CLI, sin GUI) --> framebuffer (/dev/fb0) -->
 - `config/` — snippets de configuración de sistema (config.txt, asound.conf, etc.).
 - `docs/wiki/` — documentación técnica ampliada (hardware, software, decisiones).
 - `hardware/` — esquemas, diagramas y notas de electrónica (filtro RC, modulador RF).
+- `plataforma/` — televisor IPTV: demonio `hikaritvd` + web app, pipeline, catalogo y despliegue
+  (ver [docs/wiki/05_plataforma_iptv.md](docs/wiki/05_plataforma_iptv.md)).
+- `tvtest/` — generador de señales de prueba para el TV blanco y negro.
 
 ## Estado del proyecto
 
@@ -46,4 +57,4 @@ Ver [next_steps.md](next_steps.md) para el backlog y la fase actual.
 
 ## Repositorio
 
-https://github.com/jrnueve/hikari_tv
+https://github.com/jrnueve/hikari_retro_tv

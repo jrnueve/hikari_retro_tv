@@ -6,3 +6,6 @@ Thumbs.db
 
 # Logs locales de pruebas en la Pi
 *.log
+
+# Python
+__pycache__/
